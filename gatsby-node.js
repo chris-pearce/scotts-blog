@@ -1,4 +1,3 @@
-const _ = require('lodash');
 const webpack = require('webpack');
 const path = require('path');
 
@@ -30,7 +29,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
   return new Promise((resolve, reject) => {
-    const blogPostTemplate = path.resolve(`src/templates/post.js`);
     // Query for markdown nodes to use in creating pages.
     resolve(
       graphql(
@@ -45,7 +43,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               }
             }
           }
-        `,
+        `
       ).then(result => {
         if (result.errors) {
           reject(result.errors);
@@ -53,9 +51,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
         // Create post pages
         const postTemplate = path.resolve('./src/templates/post.js');
-        // We want to create a detailed page for each
-        // product node. We'll just use the Contentful id for the slug.
-        _.each(result.data.allContentfulArticle.edges, edge => {
+        // We want to create a detailed page for each product node.
+        // We'll just use the Contentful id for the slug.
+        result.data.allContentfulArticle.edges.forEach(edge => {
           // Gatsby uses Redux to manage its internal state.
           // Plugins and sites can use functions like "createPage"
           // to interact with Gatsby.
@@ -71,7 +69,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             },
           });
         });
-      }),
+      })
     );
   });
 };

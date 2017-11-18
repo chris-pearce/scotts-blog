@@ -10,7 +10,9 @@ exports.modifyWebpackConfig = ({ config }) =>
   config.merge({
     resolve: {
       alias: {
+        components: `${paths.src}/components`,
         css: `${paths.src}/assets/css`,
+        images: `${paths.src}/assets/images`,
       },
     },
     plugins: [

@@ -9,6 +9,7 @@ module.exports = {
   extends: ['airbnb', 'prettier'],
   globals: {
     PropTypes: false,
+    React: false,
   },
   parser: 'babel-eslint',
   plugins: ['react', 'import', 'jsx-a11y'],
@@ -20,6 +21,7 @@ module.exports = {
         aspects: ['noHref', 'invalidHref', 'preferButton'],
       },
     ],
+    'import/extensions': 0,
     'import/named': 2,
     'import/no-extraneous-dependencies': 0,
     'import/no-unresolved': 1,
@@ -27,6 +29,7 @@ module.exports = {
     'max-len': [2, 100, { ignoreUrls: true }],
     'react/jsx-filename-extension': 0,
     'react/forbid-prop-types': 0,
+    'react/require-default-props': 0,
     'react/react-in-jsx-scope': 0,
   },
 };

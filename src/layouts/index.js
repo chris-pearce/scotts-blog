@@ -1,21 +1,4 @@
-import Helmet from 'react-helmet';
 import 'css/index.css';
+import Root from './Root/Root';
 
-const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet
-      title="Gatsby Default Starter"
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
-    <div>{children()}</div>
-  </div>
-);
-
-TemplateWrapper.propTypes = {
-  children: PropTypes.func.isRequired,
-};
-
-export default TemplateWrapper;
+export default Root;

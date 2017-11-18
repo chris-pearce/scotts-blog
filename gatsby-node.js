@@ -1,4 +1,5 @@
-const _ = require(`lodash`);
+const _ = require('lodash');
+const webpack = require('webpack');
 const path = require('path');
 
 const paths = {
@@ -13,17 +14,15 @@ exports.modifyWebpackConfig = ({ config }) =>
         css: `${paths.src}/assets/css`,
       },
     },
+    plugins: [
+      // Provide these dependencies globally so that we don't need
+      // to keep importing them
+      new webpack.ProvidePlugin({
+        PropTypes: 'prop-types',
+        React: 'react',
+      }),
+    ],
   });
-
-// exports.modifyBabelrc = ({ babelrc }) => {
-//   return {
-//     ...babelrc,
-//     plugins: babelrc.plugins.concat([
-//       [`transform-react-jsx`, { pragma: `Glamor.createElement` }],
-//       `glamor/babel-hoist`,
-//     ]),
-//   };
-// };
 
 // Implement the Gatsby API “createPages”. This is called once the
 // data layer is bootstrapped to let plugins create pages from data.
@@ -53,7 +52,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         }
 
         // Create post pages
-        const postTemplate = path.resolve(`./src/templates/post.js`);
+        const postTemplate = path.resolve('./src/templates/post.js');
         // We want to create a detailed page for each
         // product node. We'll just use the Contentful id for the slug.
         _.each(result.data.allContentfulArticle.edges, edge => {

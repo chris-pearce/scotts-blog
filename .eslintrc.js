@@ -26,6 +26,7 @@ module.exports = {
     'import/prefer-default-export': 0,
     'max-len': [2, 100, { ignoreUrls: true }],
     'react/jsx-filename-extension': 0,
+    'react/forbid-prop-types': 0,
     'react/react-in-jsx-scope': 0,
   },
 };

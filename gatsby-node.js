@@ -50,7 +50,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         }
 
         // Create post pages
-        const postTemplate = path.resolve('./src/templates/post.js');
+        const postTemplate = path.resolve(`${paths.src}/templates/Post/Post.js`);
         // We want to create a detailed page for each product node.
         // We'll just use the Contentful id for the slug.
         result.data.allContentfulArticle.edges.forEach(edge => {

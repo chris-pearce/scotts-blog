@@ -1,8 +1,11 @@
+const webpack = require('webpack');
 const path = require('path');
 
+const { resolve } = path;
+
 const paths = {
-  public: path.resolve(__dirname, './public'),
-  src: path.resolve(__dirname, './src'),
+  public: resolve(__dirname, './public'),
+  src: resolve(__dirname, './src'),
 };
 
 exports.modifyWebpackConfig = ({ config }) =>
@@ -12,6 +15,13 @@ exports.modifyWebpackConfig = ({ config }) =>
         css: `${paths.src}/assets/css`,
       },
     },
+    plugins: [
+      // Provide these dependencies globally so that we don't need to keep importing them
+      new webpack.ProvidePlugin({
+        PropTypes: 'prop-types',
+        React: 'react',
+      }),
+    ],
   });
 
 // exports.modifyBabelrc = ({ babelrc }) => {

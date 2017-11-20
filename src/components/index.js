@@ -1,2 +1,5 @@
-export Container from './Container/Container';
-export Logo from './Logo/Logo';
+import { Container } from './Container';
+import { Logo } from './Logo';
+import { SiteHeader } from './SiteHeader';
+
+export { Container, Logo, SiteHeader };

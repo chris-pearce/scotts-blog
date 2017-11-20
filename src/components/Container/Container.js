@@ -9,4 +9,4 @@ Container.propTypes = {
   size: PropTypes.oneOf(['x-small', 'small', 'large', 'x-large']),
 };
 
-export default Container;
+export { Container };

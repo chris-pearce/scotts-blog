@@ -1,25 +1,3 @@
-@font-face {
-  font-family: system;
-  font-style: normal;
-  font-weight: 300;
-  /* prettier-ignore */
-  src:  local('.SFNSText-Light'),
-        local('.HelveticaNeueDeskInterface-Light'),
-        local('.LucidaGrandeUI'),
-        local('Ubuntu Light'),
-        local('Segoe UI Light'),
-        local('Roboto-Light'),
-        local('DroidSans'),
-        local('Tahoma');
-}
+@charset 'UTF-8';
 
-html {
-  background-color: rgb(143, 47, 95);
-  color: white;
-  font-family: system;
-  padding: 3em;
-}
-
-a {
-  color: yellow;
-}
+@import 'reset.css';

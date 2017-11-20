@@ -6,6 +6,9 @@ const paths = {
   src: path.resolve(__dirname, './src'),
 };
 
+/**
+ * https://github.com/gatsbyjs/gatsby/issues/318
+ */
 exports.modifyWebpackConfig = ({ config }) =>
   config.merge({
     resolve: {
@@ -14,6 +17,22 @@ exports.modifyWebpackConfig = ({ config }) =>
         css: `${paths.src}/assets/css`,
         images: `${paths.src}/assets/images`,
       },
+    },
+    postcss (wp) {
+      return [
+        require('postcss-import')({ addDependencyTo: wp }),
+        require('postcss-cssnext')({
+          features: {
+            autoprefixer: {
+              flexbox: false,
+              grid: false,
+            },
+            customProperties: true,
+          }
+        }),
+        require('postcss-browser-reporter'),
+        require('postcss-reporter'),
+      ]
     },
     plugins: [
       // Provide these dependencies globally so that we don't need

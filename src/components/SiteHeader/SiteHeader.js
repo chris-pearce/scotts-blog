@@ -1,6 +1,6 @@
 import { Container, Logo } from 'components';
 
-const Header = () => (
+const SiteHeader = () => (
   <header role="banner" className="l-header">
     <Container>
       <Logo />
@@ -12,4 +12,4 @@ const Header = () => (
 //   children: PropTypes.func.isRequired,
 // };
 
-export default Header;
+export { SiteHeader };

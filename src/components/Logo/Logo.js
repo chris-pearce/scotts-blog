@@ -7,4 +7,4 @@ const Logo = () => (
   </a>
 );
 
-export default Logo;
+export { Logo };

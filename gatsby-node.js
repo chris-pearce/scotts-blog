@@ -1,5 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
+const postcssImport = require('postcss-import');
+const postcssNext = require('postcss-import');
+const postcssBrowserReporter = require('postcss-browser-reporter');
+const postcssReporter = require('postcss-reporter');
 
 const paths = {
   public: path.resolve(__dirname, './public'),
@@ -8,6 +12,7 @@ const paths = {
 
 /**
  * https://github.com/gatsbyjs/gatsby/issues/318
+ * https://github.com/MoOx/postcss-cssnext/issues/334
  */
 exports.modifyWebpackConfig = ({ config }) =>
   config.merge({
@@ -20,18 +25,17 @@ exports.modifyWebpackConfig = ({ config }) =>
     },
     postcss (wp) {
       return [
-        require('postcss-import')({ addDependencyTo: wp }),
-        require('postcss-cssnext')({
+        postcssImport({ addDependencyTo: wp }),
+        postcssNext({
           features: {
             autoprefixer: {
               flexbox: false,
               grid: false,
             },
-            customProperties: true,
           }
         }),
-        require('postcss-browser-reporter'),
-        require('postcss-reporter'),
+        postcssBrowserReporter,
+        postcssReporter,
       ]
     },
     plugins: [

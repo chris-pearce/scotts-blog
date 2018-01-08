@@ -1,0 +1,10 @@
+:root {
+  /* Font */
+  --root-font-size: 1rem;
+
+  /* Colours */
+  --color-brand: #455560;
+
+  /* Spacing */
+  --spacing-base: var(--root-font-size);
+}

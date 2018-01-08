@@ -1,0 +1,10 @@
+.c-header {
+  background-color: var(--color-brand);
+  background-image: linear-gradient(
+    45deg,
+    color(var(--color-brand) shade(6%)),
+    color(var(--color-brand) tint(16%))
+  );
+  padding-bottom: var(--spacing-base);
+  padding-top: var(--spacing-base);
+}

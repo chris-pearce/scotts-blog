@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const postcssImport = require('postcss-import');
-const postcssNext = require('postcss-import');
+const postcssNext = require('postcss-cssnext');
 const postcssBrowserReporter = require('postcss-browser-reporter');
 const postcssReporter = require('postcss-reporter');
 
@@ -29,8 +29,7 @@ exports.modifyWebpackConfig = ({ config }) =>
         postcssNext({
           features: {
             autoprefixer: {
-              flexbox: false,
-              grid: false,
+              flexbox: "no-2009",
             },
           }
         }),
@@ -39,8 +38,8 @@ exports.modifyWebpackConfig = ({ config }) =>
       ]
     },
     plugins: [
-      // Provide these dependencies globally so that we don't need
-      // to keep importing them
+      // Provide these dependencies globally so that we don't need to keep
+      // importing them.
       new webpack.ProvidePlugin({
         PropTypes: 'prop-types',
         React: 'react',
@@ -48,8 +47,8 @@ exports.modifyWebpackConfig = ({ config }) =>
     ],
   });
 
-// Implement the Gatsby API “createPages”. This is called once the
-// data layer is bootstrapped to let plugins create pages from data.
+// Implement the Gatsby API “createPages”. This is called once the data layer is
+// bootstrapped to let plugins create pages from data.
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
@@ -80,13 +79,12 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         // We'll just use the Contentful id for the slug.
         result.data.allContentfulArticle.edges.forEach(edge => {
           // Gatsby uses Redux to manage its internal state.
-          // Plugins and sites can use functions like "createPage"
-          // to interact with Gatsby.
+          // Plugins and sites can use functions like "createPage" to interact
+          // with Gatsby.
           createPage({
-            // Each page is required to have a `path` as well
-            // as a template component. The `context` is
-            // optional but is often necessary so the template
-            // can query data specific to each page.
+            // Each page is required to have a `path` as well as a template
+            // component. The`context` is optional but is often necessary so the
+            // template can query data specific to each page.
             path: `/article/${edge.node.id}/`,
             component: postTemplate,
             context: {

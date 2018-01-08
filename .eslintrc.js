@@ -26,10 +26,23 @@ module.exports = {
     'import/no-extraneous-dependencies': 0,
     'import/no-unresolved': 1,
     'import/prefer-default-export': 0,
-    'max-len': [2, 100, { ignoreUrls: true }],
+    'max-len': [2, 80, { ignoreUrls: true }],
     'react/jsx-filename-extension': 0,
     'react/forbid-prop-types': 0,
     'react/require-default-props': 0,
     'react/react-in-jsx-scope': 0,
+  },
+  settings: {
+    // This is needed to stop VS Code from reporting that it cannot find modules
+    // https://github.com/benmosher/eslint-plugin-import/issues/799
+    // https://github.com/AtomLinter/linter-eslint/issues/610
+    'import/resolver': {
+      node: {
+        paths: [
+          path.resolve(__dirname, './src'),
+          path.resolve(__dirname, './src/assets'),
+        ],
+      },
+    },
   },
 };

@@ -1,7 +1,7 @@
 import { Container, Logo } from 'components';
 
 const SiteHeader = () => (
-  <header role="banner" className="l-header">
+  <header role="banner" className="c-header">
     <Container>
       <Logo />
     </Container>

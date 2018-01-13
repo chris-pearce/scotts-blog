@@ -1,3 +1,4 @@
+// @flow
 import logoImage from 'images/ccc-logo.svg';
 
 const Logo = () => (

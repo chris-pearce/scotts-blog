@@ -1,5 +1,4 @@
 import { Container } from './Container';
-import { Logo } from './Logo';
-import { SiteHeader } from './SiteHeader';
+import { Header } from './Header';
 
-export { Container, Logo, SiteHeader };
+export { Container, Header };

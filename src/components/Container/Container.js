@@ -1,12 +1,23 @@
-import './Container.css';
+// @flow
+import classNames from 'classnames';
 
-const Container = ({ children, size = 'large' }) => (
-  <div className={`l-container l-container--${size}`}>{children}</div>
-);
+import type { ChildrenSpecificElementType } from 'types';
 
-Container.propTypes = {
-  children: PropTypes.node.isRequired,
-  size: PropTypes.oneOf(['x-small', 'small', 'large', 'x-large']),
+type Props = {
+  children: ChildrenSpecificElementType,
+  size?: 'x-small' | 'small' | 'large' | 'x-large',
+};
+
+const Container = (props: Props) => {
+  const { children, size } = props;
+
+  if (!children) return null;
+
+  return (
+    <div className={classNames('c-container', size && `c-container--${size}`)}>
+      {children}
+    </div>
+  );
 };
 
 export { Container };

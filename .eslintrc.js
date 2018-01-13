@@ -6,14 +6,16 @@ module.exports = {
     es6: true,
     node: true,
   },
-  extends: ['airbnb', 'prettier'],
+  extends: ['airbnb', 'prettier', 'plugin:flowtype/recommended'],
   globals: {
     PropTypes: false,
     React: false,
   },
   parser: 'babel-eslint',
-  plugins: ['react', 'import', 'jsx-a11y'],
+  //plugins: ['import', 'jsx-a11y', 'flowtype'],
+  plugins: ['import', 'flowtype'],
   rules: {
+    'flowtype/space-after-type-colon': [2, 'always', { allowLineBreak: true }],
     'jsx-a11y/anchor-is-valid': [
       'error',
       {
@@ -28,21 +30,33 @@ module.exports = {
     'import/prefer-default-export': 0,
     'max-len': [2, 80, { ignoreUrls: true }],
     'react/jsx-filename-extension': 0,
-    'react/forbid-prop-types': 0,
-    'react/require-default-props': 0,
+    'react/no-unused-prop-types': 0,
+    'react/prefer-stateless-function': 0,
+    'react/prop-types': 0,
     'react/react-in-jsx-scope': 0,
+    'react/require-default-props': 0,
   },
   settings: {
-    // This is needed to stop VS Code from reporting that it cannot find modules
-    // https://github.com/benmosher/eslint-plugin-import/issues/799
-    // https://github.com/AtomLinter/linter-eslint/issues/610
     'import/resolver': {
       node: {
-        paths: [
-          path.resolve(__dirname, './src'),
-          path.resolve(__dirname, './src/assets'),
-        ],
+        paths: [path.resolve(__dirname, 'src')],
+      },
+      webpack: {
+        config: 'config/modifyWebpack.js',
       },
     },
   },
+  globals: {
+    React: true,
+  },
+  // settings: {
+  //   'import/resolver': {
+  //     node: {
+  //       paths: [
+  //         path.resolve(__dirname, './src'),
+  //         path.resolve(__dirname, './src/assets'),
+  //       ],
+  //     },
+  //   },
+  // },
 };

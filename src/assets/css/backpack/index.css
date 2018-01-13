@@ -8,15 +8,16 @@
  * Contents
  * ⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺
  *
- * 1. normalize.css ‡
- * 2. Resets
- * 3. Main root †
- * 4. Forms †
- * 5. Content sectioning †
- * 6. Text content †
- * 7. Table content †
- * 8. Typography
- * 9. Interactive
+ * 1.  normalize.css ‡
+ * 2.  Resets
+ * 3.  Main root †
+ * 4.  Forms †
+ * 5.  Content sectioning †
+ * 6.  Text content †
+ * 7.  Image and multimedia †
+ * 8.  Table content †
+ * 9.  Typography
+ * 10. Interactive
  *
  * ‡ Comes from 'node_modules'.
  * † These section names come from MDN's HTML elements reference document.
@@ -42,10 +43,13 @@
 @import 'text-content.css';
 
 /* 7 */
-@import 'table-content.css';
+@import 'image-and-multimedia.css';
 
 /* 8 */
-@import 'typography.css';
+@import 'table-content.css';
 
 /* 9 */
+@import 'typography.css';
+
+/* 10 */
 @import 'interactive.css';

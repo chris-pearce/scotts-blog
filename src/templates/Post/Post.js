@@ -1,22 +1,23 @@
-const Post = ({ data }) => {
-  const article = data.contentfulArticle;
+// @flow
+type Props = {
+  data: Object,
+};
+
+const Post = (props: Props) => {
+  const article = props.data.contentfulArticle;
 
   /* eslint-disable react/no-danger */
   return (
-    <div>
+    <article>
       <h1>{article.title}</h1>
       <div
         dangerouslySetInnerHTML={{
           __html: article.body.childMarkdownRemark.html,
         }}
       />
-    </div>
+    </article>
   );
   /* eslint-enable react/no-danger */
-};
-
-Post.propTypes = {
-  data: PropTypes.object.isRequired,
 };
 
 export default Post;

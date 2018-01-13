@@ -8,3 +8,8 @@
   padding-bottom: var(--spacing-base);
   padding-top: var(--spacing-base);
 }
+
+.c-header__inner {
+  display: flex;
+  justify-content: space-between;
+}

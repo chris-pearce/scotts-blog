@@ -11,7 +11,15 @@
  * ‡ Comes from 'node_modules'.
  */
 
+/**
+ * 1. backpack.
+ */
+
 @import 'backpack/index.css';
+
+/**
+ * 2. Tokens.
+ */
 
 @import 'tokens.css';
 
@@ -19,4 +27,11 @@
  * Components.
  */
 
+@import '../../components/Container/Container.css';
+@import '../../components/MenuTrigger/MenuTrigger.css';
 @import '../../components/SiteHeader/SiteHeader.css';
+
+/* Using What Input suppress the focus ring for mouse users */
+[data-whatintent='mouse'] *:focus {
+  outline: none;
+}

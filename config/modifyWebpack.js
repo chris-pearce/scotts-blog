@@ -16,6 +16,7 @@ module.exports = ({ config }) => {
     resolve: {
       alias: {
         components: `${paths.src}/components`,
+        constants: `${paths.src}/constants`,
         css: `${paths.src}/assets/css`,
         images: `${paths.src}/assets/images`,
       },
@@ -35,7 +36,10 @@ module.exports = ({ config }) => {
       ];
     },
     plugins: [
-      new BundleAnalyzerPlugin({ analyzerMode: 'static', openAnalyzer: false }),
+      new BundleAnalyzerPlugin({
+        analyzerMode: 'static',
+        openAnalyzer: false,
+      }),
       new webpack.ProvidePlugin({
         PropTypes: 'prop-types',
         React: 'react',

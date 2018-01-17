@@ -1,5 +1,6 @@
 // @flow
 import Link from 'gatsby-link';
+import { MenuClose } from './../MenuClose';
 
 type Props = {
   isActive: boolean,
@@ -9,7 +10,16 @@ const Menu = (props: Props) => {
   const { isActive = false } = props;
 
   return isActive ? (
-    <div className="c-menu">
+    <div
+      aria-labelledby="menu-label"
+      aria-modal="true"
+      role="dialog"
+      className="c-menu"
+    >
+      <h2 className="hide-visually" id="menu-label">
+        Main navigation and our phone number
+      </h2>
+      <MenuClose />
       <nav>
         <ul>
           <li>

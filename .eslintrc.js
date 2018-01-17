@@ -36,27 +36,24 @@ module.exports = {
     'react/react-in-jsx-scope': 0,
     'react/require-default-props': 0,
   },
-  settings: {
-    'import/resolver': {
-      node: {
-        paths: [path.resolve(__dirname, 'src')],
-      },
-      webpack: {
-        config: 'config/modifyWebpack.js',
-      },
-    },
-  },
-  globals: {
-    React: true,
-  },
   // settings: {
   //   'import/resolver': {
   //     node: {
-  //       paths: [
-  //         path.resolve(__dirname, './src'),
-  //         path.resolve(__dirname, './src/assets'),
-  //       ],
+  //       paths: [path.resolve(__dirname, 'src')],
+  //     },
+  //     webpack: {
+  //       config: 'config/modifyWebpack.js',
   //     },
   //   },
   // },
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: [
+          path.resolve(__dirname, './src'),
+          path.resolve(__dirname, './src/assets'),
+        ],
+      },
+    },
+  },
 };

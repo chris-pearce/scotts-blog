@@ -1,33 +1,17 @@
-.c-menu-trigger {
+.c-menu {
   align-items: center;
+  background-color: color(var(--color-brand) alpha(-10%));
+  bottom: 0;
   display: flex;
-  height: var(--c-menu-trigger-size);
-  position: relative;
-  width: var(--c-menu-trigger-size);
-}
-
-.c-menu-trigger span,
-.c-menu-trigger span::before,
-.c-menu-trigger span::after {
-  background-color: white;
-  border-radius: 2px;
-  height: 2px;
-  width: 80%;
-}
-
-.c-menu-trigger span::before,
-.c-menu-trigger span::after {
-  content: '';
+  flex-direction: column;
+  justify-content: center;
   left: 0;
-  position: absolute;
+  position: fixed;
+  right: 0;
+  top: 0;
 }
 
-.c-menu-trigger span::before {
-  top: var(--c-menu-trigger-bar-position-offset);
-  width: 60%;
-}
-
-.c-menu-trigger span::after {
-  bottom: var(--c-menu-trigger-bar-position-offset);
-  width: 100%;
+.c-menu a {
+  color: white;
+  display: block;
 }

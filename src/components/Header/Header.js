@@ -13,8 +13,12 @@ class Header extends Component<State> {
     isMenuOpen: false,
   };
 
-  handleMenuToggle = () => {
-    this.setState(prevState => ({ isMenuOpen: !prevState.isMenuOpen }));
+  // handleMenuToggle = () => {
+  //   this.setState(prevState => ({ isMenuOpen: !prevState.isMenuOpen }));
+  // };
+
+  onMenuOpen = () => {
+    this.setState({ isMenuOpen: true });
   };
 
   render() {
@@ -27,7 +31,8 @@ class Header extends Component<State> {
             <Logo />
             <MenuTrigger
               isActive={isMenuOpen}
-              onClick={this.handleMenuToggle}
+              onClick={this.onMenuOpen}
+              text="Open menu"
             />
             <Menu isActive={isMenuOpen} />
           </div>

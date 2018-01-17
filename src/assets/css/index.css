@@ -28,8 +28,9 @@
  */
 
 @import '../../components/Container/Container.css';
-@import '../../components/MenuTrigger/MenuTrigger.css';
-@import '../../components/SiteHeader/SiteHeader.css';
+@import '../../components/Header/Header.css';
+@import '../../components/Header/innards/Menu/Menu.css';
+@import '../../components/Header/innards/MenuTrigger/MenuTrigger.css';
 
 /* Using What Input suppress the focus ring for mouse users */
 [data-whatintent='mouse'] *:focus {

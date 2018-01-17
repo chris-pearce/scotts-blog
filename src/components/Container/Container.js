@@ -10,11 +10,12 @@ type Props = {
 
 const Container = (props: Props) => {
   const { children, size } = props;
+  const rootClass = 'c-container';
 
   if (!children) return null;
 
   return (
-    <div className={classNames('c-container', size && `c-container--${size}`)}>
+    <div className={classNames(rootClass, size && `${rootClass}--${size}`)}>
       {children}
     </div>
   );

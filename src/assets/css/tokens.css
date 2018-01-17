@@ -1,15 +1,41 @@
 :root {
-  /* Font */
+  /**
+   * Typography.
+   */
+
   --root-font-size: 1rem;
 
-  /* Colours */
-  --color-brand: #455560;
+  /**
+   * Colours.
+   */
 
-  /* Spacing */
+  --color-brand: #455560;
+  --color-white: white;
+  --color-link: #5499c7;
+
+  /**
+   * Spacing.
+   */
+
   --spacing-base: var(--root-font-size);
   --spacing-large: calc(var(--root-font-size) * 2);
 
-  /* Components */
-  --c-menu-trigger-size: var(--spacing-large);
-  --c-menu-trigger-bar-position-offset: 6px;
+  /**
+   * Animations.
+   */
+
+  --animation-fade-in: fade-in 0.5s forwards;
+
+  /**
+   * Components.
+   */
+
+  /* Container */
+  --c-container-gutter: var(--spacing-base);
+
+  /* Header */
+  --c-header-spacing-ends: var(--spacing-base);
+  --c-header-color: var(--color-brand);
+  --c-header-menu-button-open-size: var(--spacing-large);
+  --c-header-menu-button-open-bar-position-offset: 6px;
 }

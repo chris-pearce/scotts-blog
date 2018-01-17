@@ -2,7 +2,7 @@
 import { Component } from 'react';
 
 import { Container } from 'components';
-import { Logo, Menu, MenuTrigger } from './innards';
+import { Logo, Menu, MenuButton } from './innards';
 
 type State = {
   isMenuOpen: boolean,
@@ -13,13 +13,22 @@ class Header extends Component<State> {
     isMenuOpen: false,
   };
 
-  // handleMenuToggle = () => {
-  //   this.setState(prevState => ({ isMenuOpen: !prevState.isMenuOpen }));
-  // };
-
-  onMenuOpen = () => {
-    this.setState({ isMenuOpen: true });
+  onMenuToggle = () => {
+    this.setState(
+      prevState => ({ isMenuOpen: !prevState.isMenuOpen }),
+      this.toggleRootClass
+    );
   };
+
+  // Toggle a class on the `<html>` element that prevents vertical scrolling
+  // when the menu is open
+  toggleRootClass() {
+    const root = document.documentElement;
+
+    if (root) {
+      root.classList.toggle('is-header-menu-open', this.state.isMenuOpen);
+    }
+  }
 
   render() {
     const { isMenuOpen } = this.state;
@@ -29,12 +38,11 @@ class Header extends Component<State> {
         <Container>
           <div className="c-header__inner">
             <Logo />
-            <MenuTrigger
-              isActive={isMenuOpen}
-              onClick={this.onMenuOpen}
-              text="Open menu"
-            />
-            <Menu isActive={isMenuOpen} />
+            {isMenuOpen ? (
+              <Menu onClick={this.onMenuToggle} />
+            ) : (
+              <MenuButton onClick={this.onMenuToggle} />
+            )}
           </div>
         </Container>
       </header>

@@ -1,7 +1,11 @@
 .c-container {
   margin: 0 auto;
   max-width: calc(1440 / var(--root-font-size));
-  padding-left: var(--spacing-base);
-  padding-right: var(--spacing-base);
+  padding-left: var(--c-container-gutter);
+  padding-right: var(--c-container-gutter);
   width: 100%;
+}
+
+.c-container--position-relative {
+  position: relative;
 }

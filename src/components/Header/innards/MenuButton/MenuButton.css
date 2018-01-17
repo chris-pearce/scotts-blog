@@ -1,0 +1,66 @@
+.c-header-menu-button {
+  align-items: center;
+  display: flex;
+  height: var(--c-header-menu-button-open-size);
+  position: relative;
+  width: var(--c-header-menu-button-open-size);
+}
+
+.c-header-menu-button span,
+.c-header-menu-button span::before,
+.c-header-menu-button span::after {
+  background-color: var(--color-white);
+  border-radius: 2px;
+  height: 2px;
+  width: 80%;
+}
+
+.c-header-menu-button span::before,
+.c-header-menu-button span::after {
+  content: '';
+}
+
+/**
+ * Open button.
+ */
+
+.c-header-menu-button--open span::before,
+.c-header-menu-button--open span::after {
+  left: 0;
+  position: absolute;
+}
+
+.c-header-menu-button--open span::before {
+  top: var(--c-header-menu-button-open-bar-position-offset);
+  width: 60%;
+}
+
+.c-header-menu-button--open span::after {
+  bottom: var(--c-header-menu-button-open-bar-position-offset);
+  width: 100%;
+}
+
+/**
+ * Close button.
+ */
+
+.c-header-menu-button--close {
+  justify-content: center;
+  position: absolute;
+  top: var(--c-header-spacing-ends);
+  right: var(--c-container-gutter);
+}
+
+.c-header-menu-button--close span {
+  transform: rotate(40deg);
+}
+
+.c-header-menu-button--close span::before {
+  display: none;
+}
+
+.c-header-menu-button--close span::after {
+  display: block;
+  transform: rotate(100deg);
+  width: 100%;
+}

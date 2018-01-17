@@ -1,6 +1,5 @@
 import { Logo } from './Logo';
 import { Menu } from './Menu';
-import { MenuClose } from './MenuClose';
-import { MenuTrigger } from './MenuTrigger';
+import { MenuButton } from './MenuButton';
 
-export { Logo, Menu, MenuClose, MenuTrigger };
+export { Logo, Menu, MenuButton };

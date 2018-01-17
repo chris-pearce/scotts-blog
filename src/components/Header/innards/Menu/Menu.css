@@ -1,17 +1,23 @@
-.c-menu {
+.c-header-menu {
   align-items: center;
+  animation: var(--animation-fade-in);
   background-color: color(var(--color-brand) alpha(-10%));
   bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   left: 0;
+  opacity: 0;
   position: fixed;
   right: 0;
   top: 0;
 }
 
-.c-menu a {
-  color: white;
+.is-header-menu-open {
+  overflow: hidden;
+}
+
+.c-header-menu a {
+  color: var(--color-white);
   display: block;
 }

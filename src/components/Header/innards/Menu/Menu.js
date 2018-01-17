@@ -1,25 +1,28 @@
 // @flow
 import Link from 'gatsby-link';
-import { MenuClose } from './../MenuClose';
+
+import { MenuButton } from './../MenuButton';
 
 type Props = {
-  isActive: boolean,
+  onClick: Function,
 };
 
 const Menu = (props: Props) => {
-  const { isActive = false } = props;
+  const { onClick } = props;
 
-  return isActive ? (
+  if (!onClick) return null;
+
+  return (
     <div
       aria-labelledby="menu-label"
       aria-modal="true"
       role="dialog"
-      className="c-menu"
+      className="c-header-menu"
     >
+      <MenuButton {...{ onClick }} isButtonOpen={false} />
       <h2 className="hide-visually" id="menu-label">
         Main navigation and our phone number
       </h2>
-      <MenuClose />
       <nav>
         <ul>
           <li>
@@ -41,7 +44,7 @@ const Menu = (props: Props) => {
       </nav>
       <a href="tel:+612-9221-0771">Call us</a>
     </div>
-  ) : null;
+  );
 };
 
 export { Menu };

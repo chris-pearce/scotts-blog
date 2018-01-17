@@ -6,7 +6,10 @@
  *
  * 1. backpack ‡
  * 2. Tokens
- * 3. Components
+ * 3. Animation keyframes
+ * 4. Inline text semantics
+ * 5. Components
+ * 6. Vendor
  *
  * ‡ Comes from 'node_modules'.
  */
@@ -24,15 +27,28 @@
 @import 'tokens.css';
 
 /**
- * Components.
+ * 3. Animation keyframes.
+ */
+
+@import 'animation-keyframes.css';
+
+/**
+ * 4. Inline text semantics.
+ */
+
+@import 'inline-text-semantics.css';
+
+/**
+ * 5. Components.
  */
 
 @import '../../components/Container/Container.css';
 @import '../../components/Header/Header.css';
 @import '../../components/Header/innards/Menu/Menu.css';
-@import '../../components/Header/innards/MenuTrigger/MenuTrigger.css';
+@import '../../components/Header/innards/MenuButton/MenuButton.css';
 
-/* Using What Input suppress the focus ring for mouse users */
-[data-whatintent='mouse'] *:focus {
-  outline: none;
-}
+/**
+ * 6. Vendor.
+ */
+
+@import 'vendor.css';

@@ -19,7 +19,7 @@ const Menu = (props: Props) => {
       role="dialog"
       className="c-header-menu"
     >
-      <MenuButton {...{ onClick }} isButtonOpen={false} />
+      <MenuButton {...{ onClick }} isOpen={false} />
       <h2 className="hide-visually" id="menu-label">
         Main navigation and our phone number
       </h2>

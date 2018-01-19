@@ -13,6 +13,10 @@
   top: 0;
 }
 
+/**
+ * Disable vertical scrolling on the document when the menu is open
+ */
+
 .is-header-menu-open {
   overflow: hidden;
 }

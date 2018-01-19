@@ -1,7 +1,7 @@
 // @flow
 import { Component } from 'react';
 
-import { Container } from 'components';
+import { CloseOnEscape, Container } from 'components';
 import { Logo, Menu, MenuButton } from './innards';
 
 type State = {
@@ -39,9 +39,11 @@ class Header extends Component<State> {
           <div className="c-header__inner">
             <Logo />
             {isMenuOpen ? (
-              <Menu onClick={this.onMenuToggle} />
+              <CloseOnEscape callback={this.onMenuToggle}>
+                <Menu onClick={this.onMenuToggle} />
+              </CloseOnEscape>
             ) : (
-              <MenuButton onClick={this.onMenuToggle} />
+              <MenuButton isFocused={!isMenuOpen} onClick={this.onMenuToggle} />
             )}
           </div>
         </Container>

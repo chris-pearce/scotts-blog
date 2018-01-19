@@ -1,10 +1,12 @@
 // @flow
-import { Children, Component } from 'react';
+import { Component } from 'react';
 
 import { KEY_CODES } from 'constants';
+import type { Children } from 'types';
 
 type Props = {
   callback: Function,
+  children: Children,
 };
 
 class CloseOnEscape extends Component<Props> {
@@ -16,14 +18,20 @@ class CloseOnEscape extends Component<Props> {
     document.removeEventListener('keydown', this.invokeCallback);
   }
 
-  invokeCallback(e) {
+  invokeCallback = (e: SyntheticKeyboardEvent<HTMLElement>) => {
+    const { callback } = this.props;
+
     if (e.keyCode !== KEY_CODES.escape) return null;
 
-    return this.props.callback();
-  }
+    return callback();
+  };
 
   render() {
-    return Children.only(this.props.children);
+    const { callback, children } = this.props;
+
+    if (!callback && !children) return null;
+
+    return children;
   }
 }
 

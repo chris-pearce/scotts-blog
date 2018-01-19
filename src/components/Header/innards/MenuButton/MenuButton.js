@@ -1,19 +1,29 @@
 // @flow
 type Props = {
-  isButtonOpen?: boolean,
+  isFocused?: boolean,
+  isOpen?: boolean,
 };
 
 const MenuButton = (props: Props) => {
-  const { isButtonOpen = true, ...moreProps } = props;
+  const { isFocused = false, isOpen = true, ...moreProps } = props;
   const rootClass = 'c-header-menu-button';
+  // Adds a ref to expose the native DOM `.focus()` method when required
+  const ref = {
+    ref: isFocused
+      ? button => {
+          if (isFocused && button) {
+            button.focus();
+          }
+        }
+      : null,
+  };
 
   return (
     <button
-      className={`${rootClass} ${rootClass}--${
-        isButtonOpen ? 'open' : 'close'
-      }`}
-      aria-label={`${isButtonOpen ? 'Open' : 'Close'} menu`}
+      className={`${rootClass} ${rootClass}--${isOpen ? 'open' : 'close'}`}
+      aria-label={`${isOpen ? 'Open' : 'Close'} menu`}
       type="button"
+      {...ref}
       {...moreProps}
     >
       <span />

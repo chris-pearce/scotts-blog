@@ -12,7 +12,6 @@ module.exports = {
     React: false,
   },
   parser: 'babel-eslint',
-  //plugins: ['import', 'jsx-a11y', 'flowtype'],
   plugins: ['import', 'flowtype'],
   rules: {
     'flowtype/space-after-type-colon': [2, 'always', { allowLineBreak: true }],
@@ -37,22 +36,13 @@ module.exports = {
     'react/require-default-props': 0,
     'react/sort-comp': 0,
   },
-  // settings: {
-  //   'import/resolver': {
-  //     node: {
-  //       paths: [path.resolve(__dirname, 'src')],
-  //     },
-  //     webpack: {
-  //       config: 'config/modifyWebpack.js',
-  //     },
-  //   },
-  // },
   settings: {
     'import/resolver': {
       node: {
         paths: [
           path.resolve(__dirname, './src'),
           path.resolve(__dirname, './src/assets'),
+          path.resolve(__dirname, './src/constants'),
         ],
       },
     },

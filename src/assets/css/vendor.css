@@ -3,7 +3,7 @@
  * https://github.com/ten1seven/what-input
  */
 
-/* Suppress the focus ring for mouse users */
-[data-whatintent='mouse'] *:focus {
+/* Suppress the focus ring on `:active` for mouse users */
+[data-whatintent='mouse'] *:focus:active {
   outline: none;
 }

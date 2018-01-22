@@ -1,21 +1,27 @@
 // @flow
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import type { ChildrenSpecificElementType } from 'types';
+import { UI_SIZES } from 'consts';
 
 type Props = {
   children: ChildrenSpecificElementType,
-  size?: 'x-small' | 'small' | 'large' | 'x-large',
+  isFlex?: boolean,
+  size?: UI_SIZES.smallx | UI_SIZES.small | UI_SIZES.large | UI_SIZES.largex,
 };
 
 const Container = (props: Props) => {
-  const { children, size } = props;
+  const { children, isFlex = false, size } = props;
   const rootClass = 'c-container';
 
   if (!children) return null;
 
   return (
-    <div className={classNames(rootClass, size && `${rootClass}--${size}`)}>
+    <div
+      className={classnames(rootClass, size && `${rootClass}--${size}`, {
+        [`${rootClass}--is-flex`]: isFlex,
+      })}
+    >
       {children}
     </div>
   );

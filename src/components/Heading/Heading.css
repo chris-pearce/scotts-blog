@@ -1,0 +1,36 @@
+.root-x-small,
+.root-small {
+  color: $g-color-shade-grey-600;
+}
+
+.root-x-small {
+  font-size: rem($shell-g-font-size-2x-small);
+  font-weight: $g-typography-font-weight-semi-bold;
+}
+
+.root-small {
+  font-size: rem($shell-g-font-size - 1);
+}
+
+.root-medium {
+  font-size: rem($shell-g-font-size-large);
+}
+
+.root-large,
+.root-x-large,
+.root-2x-large {
+  font-weight: $g-typography-font-weight-light;
+  line-height: 1.3;
+}
+
+.root-large {
+  font-size: rem($shell-g-font-size-x-large);
+}
+
+.root-x-large {
+  font-size: rem($shell-g-font-size-2x-large + 2);
+}
+
+.root-2x-large {
+  font-size: rem($shell-g-font-size-3x-large + 4);
+}

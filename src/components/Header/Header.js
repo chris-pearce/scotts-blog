@@ -6,12 +6,18 @@ import { Logo, Menu, MenuButton } from './innards';
 
 type State = {
   isMenuOpen: boolean,
+  isMenuOpenInitially: boolean,
 };
 
 class Header extends Component<State> {
   state = {
     isMenuOpen: false,
+    isMenuOpenInitially: false,
   };
+
+  componentDidMount() {
+    this.setState({ isMenuOpenInitially: true });
+  }
 
   onMenuToggle = () => {
     this.setState(
@@ -20,8 +26,8 @@ class Header extends Component<State> {
     );
   };
 
-  // Toggle a class on the `<html>` element that prevents vertical scrolling
-  // when the menu is open
+  // Toggle a class on the document to prevent vertical scrolling when the menu
+  // is open
   toggleRootClass() {
     const root = document.documentElement;
 

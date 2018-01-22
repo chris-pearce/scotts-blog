@@ -1,20 +1,23 @@
 .c-header-menu {
   align-items: center;
-  animation: var(--animation-fade-in);
-  background-color: color(var(--color-brand) alpha(-10%));
-  bottom: 0;
+  background-color: var(--color-white);
+  border: 3px solid var(--color-brand);
+  border-radius: 4px;
+  bottom: 10px;
+  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
+    0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  left: 0;
-  opacity: 0;
+  height: 50vh;
+  left: var(--c-container-gutter);
   position: fixed;
-  right: 0;
-  top: 0;
+  right: var(--c-container-gutter);
+  top: var(--c-header-spacing-ends);
 }
 
 /**
- * Disable vertical scrolling on the document when the menu is open
+ * Disable vertical scrolling on the document when the menu is open.
  */
 
 .is-header-menu-open {
@@ -22,6 +25,5 @@
 }
 
 .c-header-menu a {
-  color: var(--color-white);
   display: block;
 }

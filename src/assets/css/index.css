@@ -6,9 +6,9 @@
  *
  * 1. backpack ‡
  * 2. Tokens
- * 3. Animation keyframes
- * 4. Inline text semantics
- * 5. Components
+ * 3. Inline text semantics
+ * 4. Components
+ * 5. Utilities
  * 6. Vendor
  *
  * ‡ Comes from 'node_modules'.
@@ -27,25 +27,26 @@
 @import 'tokens.css';
 
 /**
- * 3. Animation keyframes.
- */
-
-@import 'animation-keyframes.css';
-
-/**
- * 4. Inline text semantics.
+ * 3. Inline text semantics.
  */
 
 @import 'inline-text-semantics.css';
 
 /**
- * 5. Components.
+ * 4. Components.
  */
 
 @import '../../components/Container/Container.css';
 @import '../../components/Header/Header.css';
+@import '../../components/Header/innards/Logo/Logo.css';
 @import '../../components/Header/innards/Menu/Menu.css';
 @import '../../components/Header/innards/MenuButton/MenuButton.css';
+
+/**
+ * 5. Utilities.
+ */
+
+@import 'utilities/index.css';
 
 /**
  * 6. Vendor.

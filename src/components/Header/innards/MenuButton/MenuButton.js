@@ -20,11 +20,11 @@ const MenuButton = (props: Props) => {
 
   return (
     <button
+      {...ref}
+      {...moreProps}
       className={`${rootClass} ${rootClass}--${isOpen ? 'open' : 'close'}`}
       aria-label={`${isOpen ? 'Open' : 'Close'} menu`}
       type="button"
-      {...ref}
-      {...moreProps}
     >
       <span />
     </button>

@@ -14,7 +14,7 @@
  *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
  */
 
-.hide-visually {
+.u-hide-visually {
   border: 0;
   clip: rect(0 0 0 0);
   clip-path: inset(50%);

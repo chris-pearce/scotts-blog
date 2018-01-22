@@ -1,10 +1,20 @@
 const webpack = require('webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const Jarvis = require('webpack-jarvis');
 const paths = require('./paths');
 const postcssImport = require('postcss-import');
 const postcssNext = require('postcss-cssnext');
 const postcssBrowserReporter = require('postcss-browser-reporter');
 const postcssReporter = require('postcss-reporter');
+
+const svgoConfig = JSON.stringify({
+  plugins: [
+    { convertColors: { shorthex: false } },
+    { removeAttrs: true },
+    { removeDimensions: true },
+    { removeViewBox: false },
+  ],
+});
 
 /**
  * ✌︎ Resources
@@ -16,10 +26,12 @@ module.exports = ({ config }) => {
     resolve: {
       alias: {
         components: `${paths.src}/components`,
-        constants: `${paths.src}/constants`,
+        consts: `${paths.src}/constants`,
         css: `${paths.src}/assets/css`,
         images: `${paths.src}/assets/images`,
+        utilities: `${paths.src}/utilities`,
       },
+      root: paths.src,
     },
     postcss(wp) {
       return [
@@ -40,10 +52,20 @@ module.exports = ({ config }) => {
         analyzerMode: 'static',
         openAnalyzer: false,
       }),
+      new Jarvis({
+        port: 1337,
+      }),
       new webpack.ProvidePlugin({
         PropTypes: 'prop-types',
         React: 'react',
       }),
     ],
   });
+
+  config.loader('svg', {
+    test: /\.svg$/,
+    loader: `svgo-loader?${svgoConfig}`,
+  });
+
+  return config;
 };

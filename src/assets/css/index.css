@@ -4,18 +4,19 @@
  * Contents
  * ⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺
  *
- * 1. backpack ‡
+ * 1. 🎒 backpack ‡
  * 2. Tokens
- * 3. Inline text semantics
- * 4. Components
- * 5. Utilities
- * 6. Vendor
+ * 3. Main root
+ * 4. Inline text semantics
+ * 5. Components
+ * 6. Utilities
+ * 7. Vendor
  *
  * ‡ Comes from 'node_modules'.
  */
 
 /**
- * 1. backpack.
+ * 1. 🎒 backpack.
  */
 
 @import 'backpack/index.css';
@@ -27,29 +28,38 @@
 @import 'tokens.css';
 
 /**
- * 3. Inline text semantics.
+ * 3. Main root.
+ */
+
+@import 'main-root.css';
+
+/**
+ * 4. Inline text semantics.
  */
 
 @import 'inline-text-semantics.css';
 
 /**
- * 4. Components.
+ * 5. Components.
  */
 
 @import '../../components/Container/Container.css';
+@import '../../components/Heading/Heading.css';
+
+/* Header */
 @import '../../components/Header/Header.css';
 @import '../../components/Header/innards/Logo/Logo.css';
 @import '../../components/Header/innards/Menu/Menu.css';
 @import '../../components/Header/innards/MenuButton/MenuButton.css';
 
 /**
- * 5. Utilities.
+ * 6. Utilities.
  */
 
 @import 'utilities/index.css';
 
 /**
- * 6. Vendor.
+ * 7. Vendor.
  */
 
 @import 'vendor.css';

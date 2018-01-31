@@ -22,15 +22,13 @@ const Menu = (props: Props) => {
         UTILITY_CLASSES.animations.scaleUpFromTopRight
       }`}
     >
-      <Container isFlex>
+      <Container>
         <MenuButton {...{ onClick }} isFocused isOpen={false} />
-        <Heading
-          isVisuallyHidden
-          id={id}
-          text="Main navigation and our phone number"
-        />
-        <Nav {...{ onClick }} />
-        <a href="tel:+612-9221-0771">Call us</a>
+        <div className="c-header-menu__inner">
+          <Heading id={id} size="smallx" spacing="smallx" text="Navigate" />
+          <Nav {...{ onClick }} className="c-header-menu__nav" />
+          <a href="tel:+612-9221-0771">Call us</a>
+        </div>
       </Container>
     </div>
   );

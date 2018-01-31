@@ -5,25 +5,30 @@ import { CloseOnEscape, Container } from 'components';
 import { Logo, Menu, MenuButton } from './innards';
 
 type State = {
+  isMenuButtonFocused: boolean,
   isMenuOpen: boolean,
-  isMenuOpenInitially: boolean,
 };
 
 class Header extends Component<State> {
   state = {
+    isMenuButtonFocused: false,
     isMenuOpen: false,
-    isMenuOpenInitially: false,
   };
-
-  componentDidMount() {
-    this.setState({ isMenuOpenInitially: true });
-  }
 
   onMenuToggle = () => {
     this.setState(
       prevState => ({ isMenuOpen: !prevState.isMenuOpen }),
       this.toggleRootClass
     );
+  };
+
+  onMenuClose = () => {
+    this.onMenuToggle();
+    this.focusMenuButton();
+  };
+
+  focusMenuButton = () => {
+    this.setState({ isMenuButtonFocused: true });
   };
 
   // Toggle a class on the document to prevent vertical scrolling when the menu
@@ -37,7 +42,7 @@ class Header extends Component<State> {
   }
 
   render() {
-    const { isMenuOpen } = this.state;
+    const { isMenuButtonFocused, isMenuOpen } = this.state;
 
     return (
       <header role="banner" className="c-header">
@@ -45,11 +50,14 @@ class Header extends Component<State> {
           <div className="c-header__inner">
             <Logo />
             {isMenuOpen ? (
-              <CloseOnEscape callback={this.onMenuToggle}>
-                <Menu onClick={this.onMenuToggle} />
+              <CloseOnEscape callback={this.onMenuClose}>
+                <Menu onClick={this.onMenuClose} />
               </CloseOnEscape>
             ) : (
-              <MenuButton isFocused={!isMenuOpen} onClick={this.onMenuToggle} />
+              <MenuButton
+                isFocused={isMenuButtonFocused}
+                onClick={this.onMenuToggle}
+              />
             )}
           </div>
         </Container>

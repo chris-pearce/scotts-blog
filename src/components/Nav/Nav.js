@@ -5,7 +5,8 @@ import { PAGE_NAMES } from 'consts';
 import { toLowercaseHyphenDelimited } from 'utilities';
 
 type Props = {
-  onClick: Function,
+  className?: string,
+  onClick?: Function,
 };
 
 const data = [
@@ -36,12 +37,10 @@ const data = [
 ];
 
 const Nav = (props: Props) => {
-  const { onClick } = props;
-
-  if (!onClick) return null;
+  const { className, onClick } = props;
 
   return (
-    <nav aria-label="Primary navigation">
+    <nav className={className}>
       <ul>
         {data.map(item => (
           <li key={item.id}>

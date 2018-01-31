@@ -4,6 +4,7 @@
    */
 
   --root-font-size: 1rem;
+  --font-size-large: calc(var(--root-font-size) + 2px);
 
   /**
    * Colours.

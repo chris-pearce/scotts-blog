@@ -11,7 +11,7 @@ const Menu = (props: Props) => {
   const { onClick, transitionStatus } = props;
   const id = 'menu-heading';
 
-  if (!transitionStatus && !onClick) return null;
+  if (!onClick && !transitionStatus) return null;
 
   return (
     <div

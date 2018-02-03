@@ -16,6 +16,13 @@ class Header extends Component<State> {
     isMenuOpen: false,
   };
 
+  // onMenuToggle = () => {
+  //   this.setState(
+  //     prevState => ({ isMenuOpen: !prevState.isMenuOpen }),
+  //     this.toggleRootClass
+  //   );
+  // };
+
   onMenuToggle = () => {
     this.setState(
       ({ isMenuOpen }) => ({ isMenuOpen: !isMenuOpen }),
@@ -30,6 +37,8 @@ class Header extends Component<State> {
     });
   };
 
+  // Toggle a class on the document to prevent vertical scrolling when the menu
+  // is open
   toggleRootClass() {
     const root = document.documentElement;
 
@@ -46,15 +55,26 @@ class Header extends Component<State> {
         <Container>
           <div className="c-header__inner">
             <Logo />
-            <Transition appear in={isMenuOpen} timeout={1250}>
-              {status => (
-                <Menu transitionStatus={status} onClick={this.onMenuClose} />
-              )}
-            </Transition>
-            <MenuButton
-              isFocused={isMenuButtonFocused}
-              onClick={this.onMenuToggle}
-            />
+            {isMenuOpen ? (
+              <CloseOnEscape callback={this.onMenuClose}>
+                <Transition appear in={isMenuOpen} timeout={100}>
+                  {status => (
+                    <div>
+                      <Menu
+                        onClick={this.onMenuClose}
+                        transitionStatus={status}
+                      />
+                      {console.log(isMenuOpen)}
+                    </div>
+                  )}
+                </Transition>
+              </CloseOnEscape>
+            ) : (
+              <MenuButton
+                isFocused={isMenuButtonFocused}
+                onClick={this.onMenuToggle}
+              />
+            )}
           </div>
         </Container>
       </header>

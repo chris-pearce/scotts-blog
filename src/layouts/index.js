@@ -1,7 +1,7 @@
 // @flow
 import 'css/index.css';
 import { Container, Header } from 'components';
-import { UTILITY_CLASSES } from 'consts';
+import { UTILITY_CLASSES } from 'constants/index';
 
 if (typeof window !== 'undefined') {
   // eslint-disable-next-line global-require

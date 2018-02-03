@@ -2,7 +2,7 @@
 import classnames from 'classnames';
 
 import type { ChildrenSpecificElementType } from 'types';
-import { UI_SIZES } from 'consts';
+import { UI_SIZES } from 'constants/index';
 
 type Props = {
   children: ChildrenSpecificElementType,

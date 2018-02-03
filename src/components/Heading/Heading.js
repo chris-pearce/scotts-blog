@@ -2,7 +2,7 @@
 import classnames from 'classnames';
 
 import type { UISizes } from 'types';
-import { UI_SIZES, UTILITY_CLASSES } from 'consts';
+import { UI_SIZES, UTILITY_CLASSES } from 'constants/index';
 
 type Props = {
   rank: 1 | 2 | 3 | 4 | 5 | 6,

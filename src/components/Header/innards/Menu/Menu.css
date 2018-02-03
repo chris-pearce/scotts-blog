@@ -1,21 +1,50 @@
 .c-header-menu {
-  /* align-items: center; */
   background-color: var(--color-white);
   border: 3px solid var(--color-brand);
   border-radius: 4px;
-  /* bottom: 10px; */
   box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
     0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
-  /* min-height: 20vh; */
   left: var(--c-container-gutter);
   padding-bottom: var(--c-container-gutter);
   padding-top: var(--c-container-gutter);
   position: fixed;
   right: var(--c-container-gutter);
   top: var(--c-header-spacing-ends);
+  transition: opacity, transform 1250ms;
+  transform-origin: 100% 0;
+  will-change: opacity, transform;
+}
+
+/**
+ * Transitions via "react-transition-group", see:
+ * https://reactcommunity.org/react-transition-group/.
+ *
+ * There are 4 main states a Transition can be in:
+ *
+ * ⇢ Entering
+ * ⇢ Entered
+ * ⇢ Exiting
+ * ⇢ Exited
+ */
+
+.c-header-menu.is-entering {
+  opacity: 0;
+  transform: scale(0.2);
+}
+
+.c-header-menu.is-entered {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.c-header-menu.is-exiting {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.c-header-menu.is-exited {
+  opacity: 0;
+  transform: scale(0.2);
 }
 
 /**
@@ -25,12 +54,6 @@
 .is-header-menu-open {
   overflow: hidden;
 }
-
-/* .c-header-menu__inner {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-} */
 
 /**
  * Nav.

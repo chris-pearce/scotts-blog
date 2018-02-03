@@ -1,7 +1,7 @@
 // @flow
 import Link from 'gatsby-link';
 
-import { PAGE_NAMES } from 'consts';
+import { PAGE_NAMES } from 'constants/index';
 import { toLowercaseHyphenDelimited } from 'utilities';
 
 type Props = {

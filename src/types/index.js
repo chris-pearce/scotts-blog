@@ -1,5 +1,5 @@
 // @flow
-import { UI_SIZES } from 'consts';
+import { UI_SIZES } from 'constants/index';
 
 /**
  * Children.

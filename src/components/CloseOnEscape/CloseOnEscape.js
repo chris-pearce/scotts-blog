@@ -1,7 +1,7 @@
 // @flow
 import { Component } from 'react';
 
-import { KEY_CODES } from 'consts';
+import { KEY_CODES } from 'constants/index';
 import type { Children } from 'types';
 
 type Props = {

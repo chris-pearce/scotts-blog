@@ -1,0 +1,38 @@
+.c-header-menu {
+  background-color: var(--color-white);
+  border: 3px solid var(--color-brand);
+  border-radius: 4px;
+  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
+    0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+  left: var(--c-container-gutter);
+  padding-bottom: var(--c-container-gutter);
+  padding-top: var(--c-container-gutter);
+  /* position: fixed; */
+  right: var(--c-container-gutter);
+  top: var(--c-header-spacing-ends);
+}
+
+/**
+ * Disable vertical scrolling on the document when the menu is open.
+ */
+
+.is-header-menu-open {
+  overflow: hidden;
+}
+
+/**
+ * Nav.
+ */
+
+.c-header-menu__nav a {
+  display: block;
+  font-size: var(--font-size-large);
+  padding-bottom: var(--spacing-smallx);
+  padding-top: var(--spacing-smallx);
+  transition: color 0.15s;
+}
+
+.c-header-menu__nav a:focus,
+.c-header-menu__nav a:hover {
+  color: var(--color-brand);
+}

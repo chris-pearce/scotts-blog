@@ -1,0 +1,99 @@
+/*
+ * Spacing in both downwards (default) and upwards directions.
+ */
+
+/*
+ * Downwards direction.
+ */
+
+.u-spacing-down-small2x {
+  margin-bottom: var(--spacing-small2x) !important;
+}
+
+.u-spacing-down-smallx {
+  margin-bottom: var(--spacing-smallx) !important;
+}
+
+.u-spacing-down-small {
+  margin-bottom: var(--spacing-small) !important;
+}
+
+.u-spacing-down-base {
+  margin-bottom: var(--spacing-base) !important;
+}
+
+.u-spacing-down-large {
+  margin-bottom: var(--spacing-large) !important;
+}
+
+.u-spacing-down-largex {
+  margin-bottom: var(--spacing-largex) !important;
+}
+
+.u-spacing-down-large2x {
+  margin-bottom: var(--spacing-large2x) !important;
+}
+
+.u-spacing-down-large3x {
+  margin-bottom: var(--spacing-large3x) !important;
+}
+
+.u-spacing-down-large4x {
+  margin-bottom: var(--spacing-large4x) !important;
+}
+
+.u-spacing-down-large5x {
+  margin-bottom: var(--spacing-large5x) !important;
+}
+
+.u-spacing-down-large6x {
+  margin-bottom: var(--spacing-large6x) !important;
+}
+
+/*
+ * Upwards direction.
+ */
+
+.u-spacing-up-small2x {
+  margin-top: var(--spacing-small2x) !important;
+}
+
+.u-spacing-up-smallx {
+  margin-top: var(--spacing-smallx) !important;
+}
+
+.u-spacing-up-small {
+  margin-top: var(--spacing-small) !important;
+}
+
+.u-spacing-up-base {
+  margin-top: var(--spacing-base) !important;
+}
+
+.u-spacing-up-large {
+  margin-top: var(--spacing-large) !important;
+}
+
+.u-spacing-up-largex {
+  margin-top: var(--spacing-largex) !important;
+}
+
+.u-spacing-up-large2x {
+  margin-top: var(--spacing-large2x) !important;
+}
+
+.u-spacing-up-large3x {
+  margin-top: var(--spacing-large3x) !important;
+}
+
+.u-spacing-up-large4x {
+  margin-top: var(--spacing-large4x) !important;
+}
+
+.u-spacing-up-large5x {
+  margin-top: var(--spacing-large5x) !important;
+}
+
+.u-spacing-up-large6x {
+  margin-top: var(--spacing-large6x) !important;
+}

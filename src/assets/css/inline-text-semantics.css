@@ -1,0 +1,10 @@
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  text-decoration-skip: ink;
+}
+
+a:focus,
+a:hover {
+  text-decoration: underline;
+}

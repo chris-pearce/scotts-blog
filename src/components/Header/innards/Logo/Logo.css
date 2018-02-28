@@ -1,0 +1,9 @@
+.c-header-logo img {
+  transition: filter var(--transition-smooth);
+  width: 226px;
+}
+
+.c-header-logo:focus img,
+.c-header-logo:hover img {
+  filter: opacity(80%);
+}

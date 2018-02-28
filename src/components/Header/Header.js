@@ -1,6 +1,5 @@
 // @flow
 import { Component } from 'react';
-import { TransitionGroup } from 'react-transition-group';
 
 import { Container, UITransition } from 'components';
 import { Logo, Menu, MenuButton } from './innards';
@@ -40,7 +39,6 @@ class Header extends Component<State> {
 
   render() {
     const { isMenuButtonFocused, isMenuOpen } = this.state;
-    console.log(isMenuOpen);
 
     return (
       <header role="banner" className="c-header">

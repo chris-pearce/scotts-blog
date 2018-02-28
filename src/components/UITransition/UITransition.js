@@ -1,5 +1,4 @@
 // @flow
-import classnames from 'classnames';
 import { Children, cloneElement } from 'react';
 import { Transition } from 'react-transition-group';
 
@@ -31,7 +30,13 @@ const UITransition = (props: Props) => {
   if (!props.in && !type) return null;
 
   return (
-    <Transition in={props.in} timeout={duration}>
+    <Transition
+      in={props.in}
+      timeout={duration}
+      // onExited={() =>
+      //   setTimeout(() => console.log('Ive left the building'), 1250)
+      // }
+    >
       {state =>
         cloneElement(child, {
           transitionHook: `${type} is-${state}`,

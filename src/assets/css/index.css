@@ -45,6 +45,7 @@
 
 @import '../../components/Container/Container.css';
 @import '../../components/Heading/Heading.css';
+@import '../../components/UITransition/UITransition.css';
 
 /* Header */
 @import '../../components/Header/Header.css';

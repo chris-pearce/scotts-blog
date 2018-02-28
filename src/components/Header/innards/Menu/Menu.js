@@ -1,29 +1,37 @@
 // @flow
+import classnames from 'classnames';
+
 import { Container, Heading, Nav } from 'components';
+import { UI_SIZES } from 'constants/index';
 import { MenuButton } from './../MenuButton';
 
 type Props = {
   onClick: Function,
-  transitionStatus: string,
+  transitionHook?: string,
 };
 
 const Menu = (props: Props) => {
-  const { onClick, transitionStatus } = props;
+  const { onClick, transitionHook } = props;
   const id = 'menu-heading';
 
-  if (!transitionStatus && !onClick) return null;
+  if (!onClick) return null;
 
   return (
     <div
       aria-labelledby={id}
       aria-modal="true"
       role="dialog"
-      className={`c-header-menu is-${transitionStatus}`}
+      className={classnames('c-header-menu', transitionHook)}
     >
       <Container>
         <MenuButton {...{ onClick }} isFocused isOpen={false} />
         <div className="c-header-menu__inner">
-          <Heading id={id} size="smallx" spacing="smallx" text="Navigate" />
+          <Heading
+            {...{ id }}
+            size={UI_SIZES.smallx}
+            spacing={UI_SIZES.smallx}
+            text="Navigate"
+          />
           <Nav {...{ onClick }} className="c-header-menu__nav" />
           <a href="tel:+612-9221-0771">Call us</a>
         </div>

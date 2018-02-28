@@ -7,44 +7,9 @@
   left: var(--c-container-gutter);
   padding-bottom: var(--c-container-gutter);
   padding-top: var(--c-container-gutter);
-  position: fixed;
+  /* position: fixed; */
   right: var(--c-container-gutter);
   top: var(--c-header-spacing-ends);
-  transition: opacity, transform 1250ms;
-  transform-origin: 100% 0;
-  will-change: opacity, transform;
-}
-
-/**
- * Transitions via "react-transition-group", see:
- * https://reactcommunity.org/react-transition-group/.
- *
- * There are 4 main states a Transition can be in:
- *
- * ⇢ Entering
- * ⇢ Entered
- * ⇢ Exiting
- * ⇢ Exited
- */
-
-.c-header-menu.is-entering {
-  opacity: 0;
-  transform: scale(0.2);
-}
-
-.c-header-menu.is-entered {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.c-header-menu.is-exiting {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.c-header-menu.is-exited {
-  opacity: 0;
-  transform: scale(0.2);
 }
 
 /**

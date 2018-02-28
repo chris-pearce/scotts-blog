@@ -1,8 +1,8 @@
 // @flow
 import { Component } from 'react';
-import { Transition } from 'react-transition-group';
+import { TransitionGroup } from 'react-transition-group';
 
-import { CloseOnEscape, Container } from 'components';
+import { Container, UITransition } from 'components';
 import { Logo, Menu, MenuButton } from './innards';
 
 type State = {
@@ -40,21 +40,22 @@ class Header extends Component<State> {
 
   render() {
     const { isMenuButtonFocused, isMenuOpen } = this.state;
+    console.log(isMenuOpen);
 
     return (
       <header role="banner" className="c-header">
         <Container>
           <div className="c-header__inner">
             <Logo />
-            <Transition appear in={isMenuOpen} timeout={1250}>
-              {status => (
-                <Menu transitionStatus={status} onClick={this.onMenuClose} />
-              )}
-            </Transition>
-            <MenuButton
-              isFocused={isMenuButtonFocused}
-              onClick={this.onMenuToggle}
-            />
+            {!isMenuOpen && (
+              <MenuButton
+                isFocused={isMenuButtonFocused}
+                onClick={this.onMenuToggle}
+              />
+            )}
+            <UITransition in={isMenuOpen} type="scale-and-fade-from-top-right">
+              <Menu onClick={this.onMenuClose} />
+            </UITransition>
           </div>
         </Container>
       </header>

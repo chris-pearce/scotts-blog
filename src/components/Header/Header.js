@@ -24,9 +24,7 @@ class Header extends Component<State> {
 
   onMenuClose = () => {
     this.onMenuToggle();
-    this.setState({
-      isMenuButtonFocused: true,
-    });
+    this.setState({ isMenuButtonFocused: true });
   };
 
   toggleRootClass() {
@@ -45,13 +43,11 @@ class Header extends Component<State> {
         <Container>
           <div className="c-header__inner">
             <Logo />
-            {!isMenuOpen && (
-              <MenuButton
-                isFocused={isMenuButtonFocused}
-                onClick={this.onMenuToggle}
-              />
-            )}
-            <UITransition in={isMenuOpen} type="scale-and-fade-from-top-right">
+            <MenuButton
+              isFocused={isMenuButtonFocused}
+              onClick={this.onMenuToggle}
+            />
+            <UITransition in={isMenuOpen}>
               <Menu onClick={this.onMenuClose} />
             </UITransition>
           </div>

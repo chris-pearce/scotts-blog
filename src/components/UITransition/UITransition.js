@@ -1,8 +1,8 @@
 // @flow
-import { Children, cloneElement } from 'react';
+import { cloneElement } from 'react';
 import { Transition } from 'react-transition-group';
 
-import type { Children as ChildrenType } from 'types';
+import type { Children } from 'types';
 
 /**
  * Transitions via "react-transition-group", see:
@@ -17,28 +17,28 @@ import type { Children as ChildrenType } from 'types';
  */
 
 type Props = {
-  duration?: number,
   in: boolean,
-  type: string,
-  children?: ChildrenType,
+  children: Children,
+  exitDuration?: number,
+  type?: string,
 };
 
 const UITransition = (props: Props) => {
-  const { duration = 0, type, children } = props;
-  const child = Children.only(children);
-
-  if (!props.in && !type) return null;
+  const {
+    in: inProp,
+    children,
+    exitDuration = 150,
+    type = 'scale-and-fade-from-top-right',
+  } = props;
 
   return (
     <Transition
-      in={props.in}
-      timeout={duration}
-      // onExited={() =>
-      //   setTimeout(() => console.log('Ive left the building'), 1250)
-      // }
+      in={inProp}
+      timeout={{ enter: 0, exit: exitDuration }}
+      unmountOnExit
     >
       {state =>
-        cloneElement(child, {
+        cloneElement(children, {
           transitionHook: `${type} is-${state}`,
         })
       }

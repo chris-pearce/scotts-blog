@@ -3,19 +3,19 @@
  */
 
 .scale-and-fade-from-top-right {
-  transition: all 1250ms;
+  transition: all 150ms;
   transform-origin: 100% 0;
   will-change: opacity, transform;
 }
 
 .scale-and-fade-from-top-right.is-entering,
-.scale-and-fade-from-top-right.is-exited {
+.scale-and-fade-from-top-right.is-exited,
+.scale-and-fade-from-top-right.is-exiting {
   opacity: 0;
   transform: scale(0.95);
 }
 
-.scale-and-fade-from-top-right.is-entered,
-.scale-and-fade-from-top-right.is-exiting {
+.scale-and-fade-from-top-right.is-entered {
   opacity: 1;
   transform: scale(1);
 }

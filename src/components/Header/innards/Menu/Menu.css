@@ -7,7 +7,7 @@
   left: var(--c-container-gutter);
   padding-bottom: var(--c-container-gutter);
   padding-top: var(--c-container-gutter);
-  /* position: fixed; */
+  position: fixed;
   right: var(--c-container-gutter);
   top: var(--c-header-spacing-ends);
 }

@@ -2,8 +2,6 @@
 import { cloneElement } from 'react';
 import { Transition } from 'react-transition-group';
 
-import type { Children } from 'types';
-
 /**
  * Transitions via "react-transition-group", see:
  * https://reactcommunity.org/react-transition-group/.
@@ -18,8 +16,9 @@ import type { Children } from 'types';
 
 type Props = {
   in: boolean,
-  children: Children,
-  exitDuration?: number,
+  children: React.Node,
+  exitTimeout?: number,
+  onExited?: Function,
   type?: string,
 };
 
@@ -27,19 +26,21 @@ const UITransition = (props: Props) => {
   const {
     in: inProp,
     children,
-    exitDuration = 150,
+    exitTimeout = 150,
+    onExited,
     type = 'scale-and-fade-from-top-right',
   } = props;
 
   return (
     <Transition
+      {...{ onExited }}
       in={inProp}
-      timeout={{ enter: 0, exit: exitDuration }}
+      timeout={{ enter: 0, exit: exitTimeout }}
       unmountOnExit
     >
       {state =>
         cloneElement(children, {
-          transitionHook: `${type} is-${state}`,
+          className: `${type} is-${state}`,
         })
       }
     </Transition>

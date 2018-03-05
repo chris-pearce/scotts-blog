@@ -2,9 +2,11 @@
   background-color: var(--color-white);
   border: 3px solid var(--color-brand);
   border-radius: 4px;
-  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
-    0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px #32325d26,
+    0 5px 15px rgba(0, 0, 0, 0.1);
   left: var(--c-container-gutter);
+  max-height: calc(100vh - calc(var(--c-container-gutter) * 2));
+  overflow-x: auto;
   padding-bottom: var(--c-container-gutter);
   padding-top: var(--c-container-gutter);
   position: fixed;

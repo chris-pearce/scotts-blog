@@ -36,9 +36,7 @@ const Heading = (props: Props) => {
     <Tag
       {...moreProps}
       className={classnames(`${rootClass} ${rootClass}--${size}`, {
-        [`${UTILITY_CLASSES.spacingDown}${
-          spacing || undefined
-        }`]: spacing,
+        [`${UTILITY_CLASSES.spacingDown}${spacing || ''}`]: spacing,
         [UTILITY_CLASSES.hideVisually]: isVisuallyHidden,
       })}
     >

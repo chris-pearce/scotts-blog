@@ -5,9 +5,6 @@ import { UI_SIZES } from 'constants/index';
  * Children.
  */
 
-export type Children = number | string | React$Element<any> | Array<any>;
-export type ChildrenSpecificElementType = React$Element<any>;
-
 /**
  * UI.
  */

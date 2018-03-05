@@ -1,11 +1,10 @@
 // @flow
 import classnames from 'classnames';
 
-import type { ChildrenSpecificElementType } from 'types';
 import { UI_SIZES } from 'constants/index';
 
 type Props = {
-  children: ChildrenSpecificElementType,
+  children: React.Node,
   isFlex?: boolean,
   size?: UI_SIZES.smallx | UI_SIZES.small | UI_SIZES.large | UI_SIZES.largex,
 };

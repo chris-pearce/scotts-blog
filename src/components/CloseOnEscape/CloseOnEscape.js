@@ -2,11 +2,10 @@
 import { Component } from 'react';
 
 import { KEY_CODES } from 'constants/index';
-import type { Children } from 'types';
 
 type Props = {
   callback: Function,
-  children: Children,
+  children: React.Node,
 };
 
 class CloseOnEscape extends Component<Props> {

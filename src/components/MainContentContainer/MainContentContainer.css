@@ -1,0 +1,7 @@
+/**
+ * Dull out when the header menu is open.
+ */
+
+.is-header-menu-open .c-main {
+  filter: blur(3px);
+}

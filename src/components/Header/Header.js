@@ -5,13 +5,11 @@ import { Container, UITransition } from 'components';
 import { Logo, Menu, MenuButton } from './innards';
 
 type State = {
-  isMenuButtonFocused: boolean,
   isMenuOpen: boolean,
 };
 
 class Header extends Component<State> {
   state = {
-    isMenuButtonFocused: false,
     isMenuOpen: false,
   };
 
@@ -20,11 +18,6 @@ class Header extends Component<State> {
       ({ isMenuOpen }) => ({ isMenuOpen: !isMenuOpen }),
       this.toggleRootClass
     );
-  };
-
-  onMenuClose = () => {
-    this.onMenuToggle();
-    this.setState({ isMenuButtonFocused: true });
   };
 
   toggleRootClass() {
@@ -36,19 +29,16 @@ class Header extends Component<State> {
   }
 
   render() {
-    const { isMenuButtonFocused, isMenuOpen } = this.state;
+    const { isMenuOpen } = this.state;
 
     return (
       <header role="banner" className="c-header">
         <Container>
           <div className="c-header__inner">
             <Logo />
-            <MenuButton
-              isFocused={isMenuButtonFocused}
-              onClick={this.onMenuToggle}
-            />
+            <MenuButton onClick={this.onMenuToggle} />
             <UITransition in={isMenuOpen}>
-              <Menu onClick={this.onMenuClose} />
+              <Menu onClick={this.onMenuToggle} />
             </UITransition>
           </div>
         </Container>

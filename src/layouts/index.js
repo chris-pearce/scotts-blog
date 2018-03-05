@@ -1,6 +1,6 @@
 // @flow
 import 'css/index.css';
-import { Container, Header } from 'components';
+import { Header, MainContentContainer } from 'components';
 import { UTILITY_CLASSES } from 'constants/index';
 
 if (typeof window !== 'undefined') {
@@ -23,9 +23,7 @@ const Root = (props: Props) => {
         Skip to the main content
       </a>
       <Header />
-      <main role="main" id="main">
-        <Container>{children()}</Container>
-      </main>
+      <MainContentContainer>{children()}</MainContentContainer>
     </div>
   );
 };

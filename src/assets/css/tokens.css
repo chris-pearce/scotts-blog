@@ -48,6 +48,13 @@
   --transition-smooth: 0.2s linear;
 
   /**
+   * Z-indexes.
+   */
+
+  --z-index-header: 2;
+  --z-index-main: 1;
+
+  /**
    * Components.
    */
 
@@ -57,6 +64,7 @@
   /* Header */
   --c-header-spacing-ends: var(--spacing-base);
   --c-header-color: var(--color-brand);
+  --c-header-menu-link-padding-ends: var(--spacing-smallx);
   --c-header-menu-button-size: var(--touch-target-size);
   --c-header-menu-button-padding: var(--spacing-small);
   --c-header-menu-button-open-bar-position-offset: 6px;

@@ -6,6 +6,6 @@
   width: 100%;
 }
 
-.c-container--is-flex {
-  display: flex;
+.c-container--is-inline {
+  display: block;
 }

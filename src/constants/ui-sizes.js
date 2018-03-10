@@ -1,15 +1,19 @@
-const UI_SIZES = Object.freeze({
-  small2x: 'small2x',
-  smallx: 'smallx',
-  small: 'small',
-  base: 'base',
-  large: 'large',
-  largex: 'largex',
-  large2x: 'large2x',
-  large3x: 'large3x',
-  large4x: 'large4x',
-  large5x: 'large5x',
-  large6x: 'large6x',
-});
+import keyMirror from 'keymirror';
+
+const UI_SIZES = Object.freeze(
+  keyMirror({
+    small2x: null,
+    smallx: null,
+    small: null,
+    base: null,
+    large: null,
+    largex: null,
+    large2x: null,
+    large3x: null,
+    large4x: null,
+    large5x: null,
+    large6x: null,
+  })
+);
 
 export { UI_SIZES };

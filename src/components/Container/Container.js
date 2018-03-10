@@ -5,24 +5,26 @@ import { UI_SIZES } from 'constants/index';
 
 type Props = {
   children: React.Node,
-  isFlex?: boolean,
   size?: UI_SIZES.smallx | UI_SIZES.small | UI_SIZES.large | UI_SIZES.largex,
+  tag?: 'div' | 'span',
 };
 
 const Container = (props: Props) => {
-  const { children, isFlex = false, size } = props;
-  const rootClass = 'c-container';
+  const { children, size, tag = 'div' } = props;
 
   if (!children) return null;
 
+  const Tag = tag;
+  const rootClass = 'c-container';
+
   return (
-    <div
+    <Tag
       className={classnames(rootClass, size && `${rootClass}--${size}`, {
-        [`${rootClass}--is-flex`]: isFlex,
+        [`${rootClass}--is-inline`]: tag === 'span',
       })}
     >
       {children}
-    </div>
+    </Tag>
   );
 };
 

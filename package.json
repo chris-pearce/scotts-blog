@@ -5,6 +5,9 @@
   "author": "Chris Pearce <crite70@gmail.com>",
   "license": "MIT",
   "main": "n/a",
+  "engines": {
+    "node": ">=8.9.4"
+  },
   "browserslist": [
     "last 2 versions",
     "not ie <= 11",
@@ -12,11 +15,19 @@
   ],
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop",
-    "prettier": "prettier --write '{'**/*.md','src/**/*.{json,js,scss}'}'",
+    "dev": "gatsby develop --host 0.0.0.0",
+    "prettier:diff": "prettier --list-different '{'**/*.md','src/**/*.{json,js,css}'}'",
     "lint": "eslint --color src/**/*.js",
     "lint:fix": "npm run lint --fix",
-    "test": "jest"
+    "test": "jest",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{md,json,js,css}": "precise-commits",
+    "*.js": [
+      "eslint --fix",
+      "flow focus-check"
+    ]
   },
   "dependencies": {
     "gatsby": "^1.9.223",
@@ -39,8 +50,12 @@
     "eslint-plugin-react": "^7.7.0",
     "flow-bin": "^0.66.0",
     "focus-trap-react": "^3.1.2",
+    "husky": "^0.14.3",
     "jest": "^22.4.2",
+    "keymirror": "^0.1.1",
+    "lint-staged": "^7.0.0",
     "normalize.css": "^8.0.0",
+    "precise-commits": "^1.0.2",
     "prettier": "^1.11.0",
     "react-helmet": "^5.2.0",
     "react-transition-group": "^2.2.1",

@@ -4,7 +4,7 @@ import FocusTrap from 'focus-trap-react';
 
 import { CloseOnEscape, Container, Heading, Nav } from 'components';
 import { UI_SIZES } from 'constants/index';
-import { MenuButton } from './../MenuButton';
+import { MenuButton } from './../';
 
 type Props = {
   onClick: Function,
@@ -36,13 +36,25 @@ const Menu = (props: Props) => {
                 text="Navigate"
               />
               <Nav {...{ onClick }} className="c-header-menu__nav" />
-              <a href="tel:+612-9221-0771">Call us</a>
+              <Heading
+                size={UI_SIZES.smallx}
+                spacing={UI_SIZES.smallx}
+                text="Contact"
+              />
+              <a className="c-header-menu__call-us" href="tel:+612-9221-0771">
+                Call us
+              </a>
+              <a className="c-header-menu__call-us" href="tel:+612-9221-0771">
+                Email us
+              </a>
             </div>
           </Container>
+          {/* <a className="c-header-menu__call-us" href="tel:+612-9221-0771">
+            <Container tag="span">→ Call us</Container>
+          </a> */}
         </FocusTrap>
       </div>
     </CloseOnEscape>
   );
 };
-
 export { Menu };

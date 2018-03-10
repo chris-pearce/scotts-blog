@@ -1,0 +1,15 @@
+.c-main {
+  position: relative;
+  transition: filter var(--transition-smooth);
+  will-change: filter;
+  z-index: var(--z-index-main);
+}
+
+/**
+ * Make non-interactive and apply some filters whilst the menu is open.
+ */
+
+.is-header-menu-open .c-main {
+  filter: grayscale(100%) blur(2px);
+  pointer-events: none;
+}

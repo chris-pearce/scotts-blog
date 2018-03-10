@@ -19,7 +19,7 @@
  */
 
 .is-header-menu-open {
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 /**
@@ -29,12 +29,29 @@
 .c-header-menu__nav a {
   display: block;
   font-size: var(--font-size-large);
-  padding-bottom: var(--spacing-smallx);
-  padding-top: var(--spacing-smallx);
+  padding-bottom: var(--c-header-menu-link-padding-ends);
+  padding-top: var(--c-header-menu-link-padding-ends);
   transition: color 0.15s;
 }
 
 .c-header-menu__nav a:focus,
 .c-header-menu__nav a:hover {
   color: var(--color-brand);
+}
+
+/**
+ * Call us.
+ */
+
+.c-header-menu__call-us {
+  background-color: var(--color-link);
+  border-radius: 100px;
+  color: var(--color-white);
+  display: inline-block;
+  font-feature-settings: 'smcp', 'c2sc';
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.2ch;
+  margin-right: var(--spacing-small);
+  margin-top: var(--spacing-small);
+  padding: var(--c-header-menu-link-padding-ends) 24px;
 }

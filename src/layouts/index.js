@@ -1,7 +1,7 @@
 // @flow
 import 'css/index.css';
-import { Header, MainContentContainer } from 'components';
-import { UTILITY_CLASSES } from 'constants/index';
+import { Header, Main } from 'components';
+import { FRAGMENT_INDENTIFIERS, UTILITY_CLASSES } from 'constants/index';
 
 if (typeof window !== 'undefined') {
   // eslint-disable-next-line global-require
@@ -18,12 +18,15 @@ const Root = (props: Props) => {
   if (!children) return null;
 
   return (
-    <div>
-      <a className={UTILITY_CLASSES.hideVisually} href="#main">
+    <div className="root">
+      <a
+        className={UTILITY_CLASSES.hideVisually}
+        href={`#${FRAGMENT_INDENTIFIERS.main}`}
+      >
         Skip to the main content
       </a>
       <Header />
-      <MainContentContainer>{children()}</MainContentContainer>
+      <Main>{children()}</Main>
     </div>
   );
 };

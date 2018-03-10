@@ -15,9 +15,13 @@ class Header extends Component<State> {
 
   onMenuToggle = () => {
     this.setState(
-      ({ isMenuOpen }) => ({ isMenuOpen: !isMenuOpen }),
+      prevState => ({ isMenuOpen: !prevState.isMenuOpen }),
       this.toggleRootClass
     );
+
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+    }
   };
 
   toggleRootClass() {
@@ -32,7 +36,7 @@ class Header extends Component<State> {
     const { isMenuOpen } = this.state;
 
     return (
-      <header role="banner" className="c-header">
+      <header className="c-header">
         <Container>
           <div className="c-header__inner">
             <Logo />

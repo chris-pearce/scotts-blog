@@ -1,0 +1,18 @@
+.c-header-menu-contact-cta {
+  border: 2px solid var(--color-link);
+  border-radius: 100px;
+  display: inline-block;
+  padding: var(--c-header-menu-link-padding-ends) var(--spacing-largex);
+  transition: all var(--transition-smooth);
+}
+
+.c-header-menu-contact-cta + .c-header-menu-contact-cta {
+  margin-left: var(--spacing-small);
+}
+
+.c-header-menu-contact-cta:focus,
+.c-header-menu-contact-cta:hover {
+  border-color: var(--c-header-menu-contact-cta-color);
+  color: var(--c-header-menu-contact-cta-color);
+  text-decoration: none;
+}

@@ -29,6 +29,7 @@ module.exports = {
     'import/prefer-default-export': 0,
     'max-len': [2, 80, { ignoreUrls: true }],
     'react/jsx-filename-extension': 0,
+    'react/no-unescaped-entities': 0,
     'react/no-unused-prop-types': 0,
     'react/prefer-stateless-function': 0,
     'react/prop-types': 0,
@@ -39,12 +40,12 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
-        paths: [
-          path.resolve(__dirname, './src'),
-          path.resolve(__dirname, './src/assets'),
-          path.resolve(__dirname, './src/constants'),
-        ],
+        moduleDirectory: ['node_modules', 'src', 'assets', '.'],
       },
     },
+  },
+  globals: {
+    graphql: true,
+    React: true,
   },
 };

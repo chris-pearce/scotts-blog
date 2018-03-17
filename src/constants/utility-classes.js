@@ -1,3 +1,4 @@
+// @flow
 const UTILITY_CLASSES = Object.freeze({
   animations: {
     scaleUpFromTopRight: 'u-scale-up-from-top-right',

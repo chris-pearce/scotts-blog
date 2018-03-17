@@ -1,11 +1,14 @@
 // @flow
+import * as React from 'react';
 import classnames from 'classnames';
 
 import { UI_SIZES } from 'constants/index';
 
+const { ...ALLOWED_SIZES } = UI_SIZES;
+
 type Props = {
   children: React.Node,
-  size?: UI_SIZES.smallx | UI_SIZES.small | UI_SIZES.large | UI_SIZES.largex,
+  size?: $Keys<typeof ALLOWED_SIZES>,
   tag?: 'div' | 'span',
 };
 

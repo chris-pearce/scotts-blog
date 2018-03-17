@@ -1,4 +1,5 @@
 // @flow
+// $FlowFixMe: nonexisting Flow definition for this file
 import 'css/index.css';
 import { Header, Main } from 'components';
 import { FRAGMENT_INDENTIFIERS, UTILITY_CLASSES } from 'constants/index';

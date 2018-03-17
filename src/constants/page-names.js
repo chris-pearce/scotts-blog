@@ -1,3 +1,4 @@
+// @flow
 const PAGE_NAMES = Object.freeze({
   about: 'About',
   blog: 'Blog',

@@ -1,5 +1,5 @@
 // @flow
-import { Component } from 'react';
+import * as React from 'react';
 
 import { KEY_CODES } from 'constants/index';
 
@@ -8,7 +8,7 @@ type Props = {
   children: React.Node,
 };
 
-class CloseOnEscape extends Component<Props> {
+class CloseOnEscape extends React.Component<Props> {
   componentDidMount() {
     document.addEventListener('keydown', this.invokeCallback);
   }

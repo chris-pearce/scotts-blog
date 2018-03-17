@@ -65,7 +65,14 @@
   --c-header-spacing-ends: var(--spacing-base);
   --c-header-color: var(--color-brand);
   --c-header-menu-link-padding-ends: var(--spacing-smallx);
+  --c-header-menu-contact-cta-color: var(--color-brand);
   --c-header-menu-button-size: var(--touch-target-size);
   --c-header-menu-button-padding: var(--spacing-small);
   --c-header-menu-button-open-bar-position-offset: 6px;
 }
+
+/**
+ * Custom media queries.
+ */
+
+@custom-media --palm (max-width: 37.5em); /* 600px */

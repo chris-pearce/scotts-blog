@@ -1,3 +1,5 @@
+// @flow
+import { Component } from 'react';
 /*  eslint-disable
       react/prefer-stateless-function,
       global-require,
@@ -15,7 +17,7 @@ if (process.env.NODE_ENV === `production`) {
   }
 }
 
-module.exports = class HTML extends React.Component {
+module.exports = class HTML extends Component {
   render() {
     let css;
     if (process.env.NODE_ENV === `production`) {

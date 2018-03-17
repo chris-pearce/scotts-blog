@@ -1,3 +1,4 @@
+// @flow
 import keyMirror from 'keymirror';
 
 const UI_SIZES = Object.freeze(

@@ -5,6 +5,7 @@ import FocusTrap from 'focus-trap-react';
 import { CloseOnEscape, Container, Heading, Nav } from 'components';
 import { UI_SIZES } from 'constants/index';
 import { MenuButton } from './../';
+import { ContactCta } from './innards';
 
 type Props = {
   onClick: Function,
@@ -13,9 +14,10 @@ type Props = {
 
 const Menu = (props: Props) => {
   const { onClick, className } = props;
-  const id = 'menu-heading';
 
   if (!onClick) return null;
+
+  const id = 'menu-heading';
 
   return (
     <CloseOnEscape callback={onClick}>
@@ -27,31 +29,27 @@ const Menu = (props: Props) => {
       >
         <FocusTrap focusTrapOptions={{ escapeDeactivates: false }}>
           <Container>
-            <MenuButton {...{ onClick }} isOpen={false} />
+            <MenuButton isOpen={false} onClick={onClick} />
             <div className="c-header-menu__inner">
               <Heading
-                {...{ id }}
+                id={id}
                 size={UI_SIZES.smallx}
                 spacing={UI_SIZES.smallx}
                 text="Navigate"
               />
-              <Nav {...{ onClick }} className="c-header-menu__nav" />
+              <Nav className="c-header-menu__nav" onClick={onClick} />
               <Heading
                 size={UI_SIZES.smallx}
-                spacing={UI_SIZES.smallx}
+                spacing={UI_SIZES.base}
                 text="Contact"
               />
-              <a className="c-header-menu__call-us" href="tel:+612-9221-0771">
-                Call us
-              </a>
-              <a className="c-header-menu__call-us" href="tel:+612-9221-0771">
-                Email us
-              </a>
+              <ContactCta href="tel:+612-9221-0771" text="Call us" />
+              <ContactCta
+                href="mailto:info@citychiropractor.com.au"
+                text="Email us"
+              />
             </div>
           </Container>
-          {/* <a className="c-header-menu__call-us" href="tel:+612-9221-0771">
-            <Container tag="span">→ Call us</Container>
-          </a> */}
         </FocusTrap>
       </div>
     </CloseOnEscape>

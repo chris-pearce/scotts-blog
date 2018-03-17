@@ -9,7 +9,9 @@
  * Make non-interactive and apply some filters whilst the menu is open.
  */
 
-.is-header-menu-open .c-main {
-  filter: grayscale(100%) blur(2px);
-  pointer-events: none;
+@media (--palm) {
+  .is-header-menu-open .c-main {
+    filter: grayscale(100%) blur(2px);
+    pointer-events: none;
+  }
 }

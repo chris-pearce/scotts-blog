@@ -1,3 +1,4 @@
+// @flow
 const KEY_CODES = Object.freeze({
   a: 65,
   backspace: 8,

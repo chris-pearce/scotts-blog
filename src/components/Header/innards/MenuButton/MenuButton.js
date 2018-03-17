@@ -1,17 +1,18 @@
 // @flow
 type Props = {
   isOpen?: boolean,
+  onClick?: Function,
 };
 
 const MenuButton = (props: Props) => {
-  const { isOpen = true, ...moreProps } = props;
+  const { isOpen = true, onClick } = props;
   const rootClass = 'c-header-menu-button';
 
   return (
     <button
-      {...moreProps}
-      className={`${rootClass} ${rootClass}--${isOpen ? 'open' : 'close'}`}
       aria-label={`${isOpen ? 'Open' : 'Close'} menu`}
+      className={`${rootClass} ${rootClass}--${isOpen ? 'open' : 'close'}`}
+      onClick={onClick}
       type="button"
     >
       <span />

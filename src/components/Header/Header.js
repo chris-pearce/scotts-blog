@@ -1,14 +1,15 @@
 // @flow
-import { Component } from 'react';
+import Media from 'react-media';
 
-import { Container, UITransition } from 'components';
+import { BREAKPOINTS } from 'constants/index';
+import { Container, Nav, UITransition } from 'components';
 import { Logo, Menu, MenuButton } from './innards';
 
 type State = {
-  isMenuOpen: boolean,
+  isMenuOpen?: boolean,
 };
 
-class Header extends Component<State> {
+class Header extends React.Component<State> {
   state = {
     isMenuOpen: false,
   };
@@ -40,10 +41,20 @@ class Header extends Component<State> {
         <Container>
           <div className="c-header__inner">
             <Logo />
-            <MenuButton onClick={this.onMenuToggle} />
-            <UITransition in={isMenuOpen}>
-              <Menu onClick={this.onMenuToggle} />
-            </UITransition>
+            <Media query={`(max-width: ${BREAKPOINTS.palm})`}>
+              {matches =>
+                matches ? (
+                  <div>
+                    <MenuButton onClick={this.onMenuToggle} />
+                    <UITransition in={isMenuOpen}>
+                      <Menu onClick={this.onMenuToggle} />
+                    </UITransition>
+                  </div>
+                ) : (
+                  <Nav onClick={this.onMenuToggle} className="c-header__nav" />
+                )
+              }
+            </Media>
           </div>
         </Container>
       </header>

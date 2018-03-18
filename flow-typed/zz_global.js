@@ -4,10 +4,6 @@
 
 declare var React: $Exports<'react'>;
 
-declare module 'assets/*' {
-  declare module.exports: any;
-}
-
 declare module 'graphql' {
   declare module.exports: any;
 }

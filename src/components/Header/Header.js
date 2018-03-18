@@ -6,7 +6,7 @@ import { Container, Nav, UITransition } from 'components';
 import { Logo, Menu, MenuButton } from './innards';
 
 type State = {
-  isMenuOpen?: boolean,
+  isMenuOpen: boolean,
 };
 
 class Header extends React.Component<State> {

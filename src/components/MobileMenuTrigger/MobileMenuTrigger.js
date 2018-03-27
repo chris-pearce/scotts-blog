@@ -4,9 +4,9 @@ type Props = {
   onClick?: Function,
 };
 
-const MenuButton = (props: Props) => {
+const MobileMenuTrigger = (props: Props) => {
   const { isOpen = true, onClick } = props;
-  const rootClass = 'c-header-menu-button';
+  const rootClass = 'c-mobile-menu-trigger';
 
   return (
     <button
@@ -20,4 +20,4 @@ const MenuButton = (props: Props) => {
   );
 };
 
-export { MenuButton };
+export { MobileMenuTrigger };

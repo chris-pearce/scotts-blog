@@ -1,0 +1,13 @@
+.c-logo:focus {
+  outline-color: var(--color-focus-alternate);
+}
+
+.c-logo img {
+  transition: filter var(--transition-smooth);
+  width: 226px;
+}
+
+.c-logo:focus img,
+.c-logo:hover img {
+  filter: opacity(80%);
+}

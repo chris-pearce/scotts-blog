@@ -1,0 +1,32 @@
+/**
+ * Mobile.
+ */
+
+.c-nav--mobile {
+  margin-bottom: var(--spacing-large);
+}
+
+.c-nav--mobile a {
+  display: block;
+  font-size: var(--font-size-large);
+  padding-bottom: var(--c-nav-link-padding-ends);
+  padding-top: var(--c-nav-link-padding-ends);
+  transition: color var(--transition-smooth);
+}
+
+.c-nav--mobile a:focus,
+.c-nav--mobile a:hover {
+  color: var(--color-brand);
+}
+
+/**
+ * Non-mobile.
+ */
+
+.c-nav--non-mobile ul {
+  display: flex;
+}
+
+.c-nav--non-mobile a {
+  color: var(--color-white);
+}

@@ -1,22 +1,30 @@
 // @flow
+import { Fragment } from 'react';
 import Media from 'react-media';
 
 import { BREAKPOINTS } from 'constants/index';
-import { Container, Nav, UITransition } from 'components';
-import { Logo, Menu, MenuButton } from './innards';
+import {
+  ContactCtas,
+  Container,
+  Logo,
+  MobileMenu,
+  MobileMenuTrigger,
+  Nav,
+  UITransition,
+} from 'components';
 
 type State = {
-  isMenuOpen: boolean,
+  isMobileMenuOpen: boolean,
 };
 
-class Header extends React.Component<State> {
+class Header extends React.Component<{}, State> {
   state = {
-    isMenuOpen: false,
+    isMobileMenuOpen: false,
   };
 
-  onMenuToggle = () => {
+  onMobileMenuToggle = () => {
     this.setState(
-      prevState => ({ isMenuOpen: !prevState.isMenuOpen }),
+      prevState => ({ isMobileMenuOpen: !prevState.isMobileMenuOpen }),
       this.toggleRootClass
     );
 
@@ -29,29 +37,32 @@ class Header extends React.Component<State> {
     const root = document.documentElement;
 
     if (root) {
-      root.classList.toggle('is-header-menu-open', this.state.isMenuOpen);
+      root.classList.toggle('is-mobile-menu-open', this.state.isMobileMenuOpen);
     }
   }
 
   render() {
-    const { isMenuOpen } = this.state;
+    const { isMobileMenuOpen } = this.state;
 
     return (
       <header className="c-header">
         <Container>
           <div className="c-header__inner">
             <Logo />
-            <Media query={`(max-width: ${BREAKPOINTS.palm})`}>
+            <Media query={`(max-width: ${BREAKPOINTS.large})`}>
               {matches =>
                 matches ? (
-                  <div>
-                    <MenuButton onClick={this.onMenuToggle} />
-                    <UITransition in={isMenuOpen}>
-                      <Menu onClick={this.onMenuToggle} />
+                  <Fragment>
+                    <MobileMenuTrigger onClick={this.onMobileMenuToggle} />
+                    <UITransition in={isMobileMenuOpen}>
+                      <MobileMenu onClick={this.onMobileMenuToggle} />
                     </UITransition>
-                  </div>
+                  </Fragment>
                 ) : (
-                  <Nav onClick={this.onMenuToggle} className="c-header__nav" />
+                  <div className="c-header__non-mobile-nav">
+                    <ContactCtas />
+                    <Nav isMobile={false} />
+                  </div>
                 )
               }
             </Media>

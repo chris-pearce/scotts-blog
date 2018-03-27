@@ -5,7 +5,7 @@ import { PAGE_NAMES } from 'constants/index';
 import { toLowercaseHyphenDelimited } from 'utilities';
 
 type Props = {
-  className?: string,
+  isMobile?: boolean,
   onClick?: Function,
 };
 
@@ -37,15 +37,20 @@ const data = [
 ];
 
 const Nav = (props: Props) => {
-  const { className, onClick } = props;
+  const { isMobile = true, onClick } = props;
+  const rootClass = 'c-nav';
 
   return (
-    <nav className={className}>
+    <nav
+      className={`${rootClass} ${rootClass}--${
+        isMobile ? 'mobile' : 'non-mobile'
+      }`}
+    >
       <ul>
         {data.map(item => (
           <li key={item.id}>
             <Link
-              {...{ onClick }}
+              onClick={onClick}
               to={`/${toLowercaseHyphenDelimited(item.name)}/`}
             >
               {item.name}

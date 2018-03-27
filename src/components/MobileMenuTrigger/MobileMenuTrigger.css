@@ -1,0 +1,93 @@
+.c-mobile-menu-trigger {
+  background-clip: content-box;
+  height: var(--c-mobile-menu-trigger-size);
+  padding: var(--c-mobile-menu-trigger-padding);
+  width: var(--c-mobile-menu-trigger-size);
+}
+
+.c-mobile-menu-trigger span,
+.c-mobile-menu-trigger span::before,
+.c-mobile-menu-trigger span::after {
+  border-radius: 2px;
+  display: block;
+  height: 2px;
+  transition: opacity var(--transition-smooth);
+}
+
+.c-mobile-menu-trigger span::before,
+.c-mobile-menu-trigger span::after {
+  content: '';
+}
+
+.c-mobile-menu-trigger:focus span,
+.c-mobile-menu-trigger:hover span {
+  opacity: 0.5;
+}
+
+/**
+ * Open.
+ */
+
+.c-mobile-menu-trigger--open {
+  transform: translate(
+    var(--c-mobile-menu-trigger-padding),
+    calc(var(--c-mobile-menu-trigger-padding) * -1)
+  );
+}
+
+.c-mobile-menu-trigger--open:focus {
+  outline-color: var(--color-focus-alternate);
+}
+
+.c-mobile-menu-trigger--open span,
+.c-mobile-menu-trigger--open span::before,
+.c-mobile-menu-trigger--open span::after {
+  background-color: var(--color-white);
+}
+
+.c-mobile-menu-trigger--open span,
+.c-mobile-menu-trigger--open span::before {
+  margin-right: var(--c-mobile-menu-trigger-open-bar-position-offset);
+}
+
+.c-mobile-menu-trigger--open span::before {
+  transform: translateY(
+    calc(
+      -2px + calc(var(--c-mobile-menu-trigger-open-bar-position-offset) * -1px)
+    )
+  );
+}
+
+.c-mobile-menu-trigger--open span::after {
+  margin-right: calc(
+    var(--c-mobile-menu-trigger-open-bar-position-offset) * -1px
+  );
+  transform: translateY(var(--c-mobile-menu-trigger-open-bar-position-offset));
+}
+
+/**
+ * Close.
+ */
+
+.c-mobile-menu-trigger--close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.c-mobile-menu-trigger--close span {
+  background: transparent;
+}
+
+.c-mobile-menu-trigger--close span::before,
+.c-mobile-menu-trigger--close span::after {
+  background-color: var(--color-brand);
+}
+
+.c-mobile-menu-trigger--close span::before {
+  transform: rotate(45deg);
+}
+
+.c-mobile-menu-trigger--close span::after {
+  transform: rotate(-45deg) translate(1px, -1px);
+}

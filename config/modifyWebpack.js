@@ -26,7 +26,7 @@ module.exports = ({ config }) => {
     resolve: {
       alias: {
         components: `${paths.src}/components`,
-        consts: `${paths.src}/constants`,
+        constants: `${paths.src}/constants`,
         css: `${paths.src}/assets/css`,
         images: `${paths.src}/assets/images`,
         utilities: `${paths.src}/utilities`,

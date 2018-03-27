@@ -1,0 +1,18 @@
+.c-contact-ctas__item {
+  border: 2px solid var(--color-link);
+  border-radius: 100px;
+  display: inline-block;
+  padding: var(--c-contact-ctas-padding-ends) var(--spacing-largex);
+  transition: all var(--transition-smooth);
+}
+
+.c-contact-ctas__item:not(:last-child) {
+  margin-right: var(--spacing-small);
+}
+
+.c-contact-ctas__item:focus,
+.c-contact-ctas__item:hover {
+  border-color: var(--c-contact-ctas-color);
+  color: var(--c-contact-ctas-color);
+  text-decoration: none;
+}

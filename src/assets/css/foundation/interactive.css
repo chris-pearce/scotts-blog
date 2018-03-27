@@ -1,0 +1,13 @@
+*:focus {
+  outline: dashed 3px var(--color-black);
+  outline-offset: 3px;
+}
+
+/**
+ * Suppress the focus ring on `:active` for mouse users using the What Input lib.
+ * https://github.com/ten1seven/what-input
+ */
+
+[data-whatintent='mouse'] *:active {
+  outline: none !important;
+}

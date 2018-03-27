@@ -15,3 +15,10 @@
   display: flex;
   justify-content: space-between;
 }
+
+.c-header__non-mobile-nav {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

@@ -1,6 +1,6 @@
 .c-container {
   margin: 0 auto;
-  max-width: calc(1440 / var(--root-font-size));
+  max-width: var(--c-container-max-width);
   padding-left: var(--c-container-gutter);
   padding-right: var(--c-container-gutter);
   width: 100%;

@@ -1,9 +1,0 @@
-/**
- * What Input.
- * https://github.com/ten1seven/what-input
- */
-
-/* Suppress the focus ring on `:active` for mouse users */
-[data-whatintent='mouse'] *:focus:active {
-  outline: none;
-}

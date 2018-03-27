@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: 'https://citychiropractor.com.au',
     title: 'City Chiropractic Care',
   },
   plugins: [
+    'gatsby-plugin-react-next',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-contentful',

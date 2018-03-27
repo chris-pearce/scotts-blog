@@ -1,13 +1,14 @@
 // @flow
-import { ROOT_FONT_SIZE } from './root-font-size';
+import { toEm } from 'utilities';
 
 const BREAKPOINTS = Object.freeze({
   small2x: null,
   smallx: null,
   small: null,
-  palm: `${600 / ROOT_FONT_SIZE}em`,
-  lap: null,
-  desk: null,
+  medium: toEm(600),
+  large: toEm(780),
+  largex: null,
+  large2x: null,
 });
 
 export { BREAKPOINTS };

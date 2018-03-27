@@ -6,12 +6,12 @@
 }
 
 /**
- * Make non-interactive and apply some filters whilst the menu is open.
+ * Make non-interactive and apply some filters whilst the mobile menu is open.
  */
 
-@media (--palm) {
-  .is-header-menu-open .c-main {
+/* @media (--up-to-medium) {
+  .is-mobile-menu-open .c-main {
     filter: grayscale(100%) blur(2px);
     pointer-events: none;
   }
-}
+} */

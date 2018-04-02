@@ -60,7 +60,7 @@ class Header extends React.Component<{}, State> {
                   </Fragment>
                 ) : (
                   <div className="c-header__non-mobile-nav">
-                    <ContactCtas />
+                    <ContactCtas isAlternateStyle />
                     <Nav isMobile={false} />
                   </div>
                 )

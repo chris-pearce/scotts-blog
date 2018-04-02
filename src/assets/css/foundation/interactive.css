@@ -1,13 +1,13 @@
-*:focus {
-  outline: dashed 3px var(--color-black);
+:focus {
+  outline: dashed 3px var(--color-brand);
   outline-offset: 3px;
 }
 
 /**
- * Suppress the focus ring on `:active` for mouse users using the What Input lib.
+ * Suppress the focus ring on `:focus` for mouse users using the What Input lib.
  * https://github.com/ten1seven/what-input
  */
 
-[data-whatintent='mouse'] *:active {
+[data-whatintent='mouse'] :focus {
   outline: none !important;
 }

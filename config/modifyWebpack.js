@@ -6,6 +6,7 @@ const postcssImport = require('postcss-import');
 const postcssNext = require('postcss-cssnext');
 const postcssBrowserReporter = require('postcss-browser-reporter');
 const postcssReporter = require('postcss-reporter');
+const tokens = require('./../src/constants/tokens.json');
 
 const svgoConfig = JSON.stringify({
   plugins: [
@@ -35,11 +36,16 @@ module.exports = ({ config }) => {
     },
     postcss(wp) {
       return [
-        postcssImport({ addDependencyTo: wp }),
+        postcssImport({
+          addDependencyTo: wp,
+        }),
         postcssNext({
           features: {
             autoprefixer: {
               flexbox: 'no-2009',
+            },
+            customProperties: {
+              variables: tokens,
             },
           },
         }),

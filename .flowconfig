@@ -12,6 +12,7 @@
 module.system.node.resolve_dirname=node_modules
 module.system.node.resolve_dirname=src
 module.system.node.resolve_dirname=src/assets/
+module.file_ext=.json
 esproposal.decorators=ignore
 emoji=true
 

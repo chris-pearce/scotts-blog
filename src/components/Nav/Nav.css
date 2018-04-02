@@ -27,6 +27,10 @@
   display: flex;
 }
 
+.c-nav--non-mobile li:not(:last-child) {
+  margin-right: var(--spacing-large3x);
+}
+
 .c-nav--non-mobile a {
   color: var(--color-white);
 }

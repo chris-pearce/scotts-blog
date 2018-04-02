@@ -18,8 +18,8 @@
  * Disable vertical scrolling on the document when the menu is open.
  */
 
-/* @media (--up-to-medium) {
+@media (--up-to-header-bp) {
   .is-mobile-menu-open {
     overflow-y: hidden;
   }
-} */
+}

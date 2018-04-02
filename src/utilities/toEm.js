@@ -1,6 +1,6 @@
 // @flow
-import { FONT_SIZES } from 'constants/font-sizes';
+import tokens from './../constants/tokens.json';
 
-const toEm = (val: number) => val && `${val / FONT_SIZES.root}em`;
+const toEm = (val: number) => val && `${val / tokens['root-unit']}em`;
 
 export { toEm };

@@ -85,9 +85,10 @@
 }
 
 .c-mobile-menu-trigger--close span::before {
-  transform: rotate(45deg);
+  transform: rotate(var(--c-mobile-menu-trigger-close-rotate));
 }
 
 .c-mobile-menu-trigger--close span::after {
-  transform: rotate(-45deg) translate(1px, -1px);
+  transform: rotate(calc(-1 * var(--c-mobile-menu-trigger-close-rotate)))
+    translate(1px, -1px);
 }

@@ -3,7 +3,7 @@
    * Typography.
    */
 
-  --root-font-size: 1rem;
+  --root-font-size: calc(var(--root-unit) / 16 * 1rem);
   --font-size-large: calc(var(--root-font-size) + 2px);
 
   /**
@@ -15,7 +15,8 @@
   --color-black: black;
   --color-link: #5499c7;
   --color-alpha: hsla(0, 0%, 100%, 0.5);
-  --color-focus-alternate: aqua;
+  --color-focus: var(--color-brand);
+  --color-focus-alternate: var(--color-white);
 
   /**
    * Spacing.
@@ -36,12 +37,6 @@
   --spacing-large4x: calc(var(--root-font-size) + 20px);
   --spacing-large5x: calc(var(--root-font-size) + 28px);
   --spacing-large6x: calc(var(--root-font-size) + 36px);
-
-  /**
-   * Breakpoints.
-   */
-
-  --breakpoint-root-unit: 16;
 
   /**
    * Accessibility/UX.
@@ -67,11 +62,12 @@
    */
 
   /* Contact CTAs */
-  --c-contact-ctas-color: var(--color-brand);
-  --c-contact-ctas-padding-ends: var(--spacing-smallx);
+  --c-contact-ctas-color: var(--color-link);
+  --c-contact-ctas-color-hover: var(--color-brand);
+  --c-contact-ctas-color-inverse: var(--color-white);
 
   /* Container */
-  --c-container-max-width: calc(1440 / 16 * 1rem);
+  --c-container-max-width: calc(1260 / var(--root-unit) * 1rem);
   --c-container-gutter: var(--spacing-large);
 
   /* Header */
@@ -90,9 +86,3 @@
   /* Nav */
   --c-nav-link-padding-ends: var(--spacing-smallx);
 }
-
-/**
- * Custom media queries.
- */
-
-/* @custom-media --up-to-medium (max-width: calc(600 / var(--breakpoint-root-unit))); */

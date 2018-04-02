@@ -9,9 +9,9 @@
  * Make non-interactive and apply some filters whilst the mobile menu is open.
  */
 
-/* @media (--up-to-medium) {
+@media (--up-to-header-bp) {
   .is-mobile-menu-open .c-main {
     filter: grayscale(100%) blur(2px);
     pointer-events: none;
   }
-} */
+}

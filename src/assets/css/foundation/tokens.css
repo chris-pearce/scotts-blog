@@ -62,9 +62,10 @@
    */
 
   /* Contact CTAs */
+  --c-contact-ctas-background-alternate: var(--color-brand);
   --c-contact-ctas-color: var(--color-link);
   --c-contact-ctas-color-hover: var(--color-brand);
-  --c-contact-ctas-color-inverse: var(--color-white);
+  --c-contact-ctas-color-alternate: var(--color-white);
 
   /* Container */
   --c-container-max-width: calc(1260 / var(--root-unit) * 1rem);
@@ -72,6 +73,7 @@
 
   /* Header */
   --c-header-spacing-ends: var(--spacing-base);
+  --c-header-spacing-ends-large: var(--spacing-large);
   --c-header-color: var(--color-brand);
 
   /* Mobile menu */
@@ -84,5 +86,5 @@
   --c-mobile-menu-trigger-close-rotate: 45deg;
 
   /* Nav */
-  --c-nav-link-padding-ends: var(--spacing-smallx);
+  --c-nav-mobile-link-padding-ends: var(--spacing-smallx);
 }

@@ -1,5 +1,9 @@
+/* 600px */
 @custom-media --up-to-large (width <= 48.75em);
 @custom-media --from-large (width > 48.75em);
+/* 1000px */
+@custom-media --up-to-largex (width <= 62.5em);
+@custom-media --from-largex (width > 62.5em);
 
 @custom-media --up-to-header-bp (width <= 48.75em);
 @custom-media --from-header-bp (width > 48.75em);

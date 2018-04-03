@@ -11,6 +11,13 @@
   z-index: var(--z-index-header);
 }
 
+@media (--from-largex) {
+  .c-header {
+    padding-bottom: var(--c-header-spacing-ends-large);
+    padding-top: var(--c-header-spacing-ends-large);
+  }
+}
+
 .c-header__inner {
   display: flex;
   justify-content: space-between;

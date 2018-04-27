@@ -26,9 +26,10 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.{md,json,js,css}": "precise-commits",
+    "*.{md,json,scss}": "precise-commits --whitelist",
     "*.js": [
-      "eslint --fix",
+      "precise-commits --whitelist",
+      "eslint",
       "flow focus-check"
     ]
   },

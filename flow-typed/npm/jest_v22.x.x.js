@@ -17,7 +17,7 @@ type JestMockFn<TArguments: $ReadOnlyArray<*>, TReturn> = {
      * An array that contains all the object instances that have been
      * instantiated from this mock function.
      */
-    instances: Array<TReturn>
+    instances: Array<TReturn>,
   },
   /**
    * Resets all information stored in the mockFn.mock.calls and
@@ -71,7 +71,7 @@ type JestMockFn<TArguments: $ReadOnlyArray<*>, TReturn> = {
   /**
    * Sugar for only returning a value once inside your mock
    */
-  mockReturnValueOnce(value: TReturn): JestMockFn<TArguments, TReturn>
+  mockReturnValueOnce(value: TReturn): JestMockFn<TArguments, TReturn>,
 };
 
 type JestAsymmetricEqualityType = {
@@ -297,7 +297,7 @@ type JestExpectType = {
    * Use .toThrowErrorMatchingSnapshot to test that a function throws a error
    * matching the most recent snapshot when it is called.
    */
-  toThrowErrorMatchingSnapshot(): void
+  toThrowErrorMatchingSnapshot(): void,
 };
 
 type JestObjectType = {
@@ -456,7 +456,7 @@ type JestObjectType = {
    * Set the default timeout interval for tests and before/after hooks in milliseconds.
    * Note: The default timeout interval is 5 seconds if this method is not called.
    */
-  setTimeout(timeout: number): JestObjectType
+  setTimeout(timeout: number): JestObjectType,
 };
 
 type JestSpyType = {
@@ -608,7 +608,7 @@ type JestPrettyFormatPlugin = {
     serialize: JestPrettyFormatPrint,
     indent: JestPrettyFormatIndent,
     opts: JestPrettyFormatOptions,
-    colors: JestPrettyFormatColors,
+    colors: JestPrettyFormatColors
   ) => string,
   test: any => boolean,
 };

@@ -5,15 +5,8 @@
   "author": "Chris Pearce <crite70@gmail.com>",
   "license": "UNLICENSED",
   "main": "n/a",
-  "engines": {
-    "node": ">=8.9.4"
-  },
   "browserslist": [
-    "last 2 versions",
-    "not IE <= 11",
-    "iOS >= 9",
-    "not IE_Mob <= 10",
-    "not BlackBerry <= 10"
+    "> 1%"
   ],
   "scripts": {
     "build": "gatsby build",

@@ -16,4 +16,5 @@ module.exports = {
     },
     'gatsby-transformer-remark',
   ],
+  polyfill: false,
 };

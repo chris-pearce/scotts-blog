@@ -9,13 +9,13 @@ module.exports = wp => [
     addDependencyTo: wp,
   }),
   postcssNext({
+    browsers: ['> 1%', 'not IE 11'],
     features: {
-      autoprefixer: {
-        flexbox: false,
-      },
       customProperties: {
         variables: tokens,
+        warnings: true,
       },
+      filter: false, // TODO: this isn't working
     },
   }),
   postcssBrowserReporter,

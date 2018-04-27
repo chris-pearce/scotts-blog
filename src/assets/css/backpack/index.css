@@ -19,6 +19,7 @@
  * 9.  Typography
  * 10. Interactive
  * 11. Utilities
+ * 12. Print
  *
  * ‡ Comes from 'node_modules'.
  * † These section names come from MDN's HTML elements reference document.
@@ -26,7 +27,7 @@
  */
 
 /* 1 */
-@import 'normalize.css';
+@import '~normalize.css';
 
 /* 2 */
 @import 'resets.css';
@@ -57,3 +58,6 @@
 
 /* 11 */
 @import 'utilities.css';
+
+/* 12 */
+@import 'print.css';

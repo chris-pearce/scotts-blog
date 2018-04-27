@@ -1,3 +1,3 @@
-exports.modifyBabelrc = require('./config/modifyBabelrc');
-exports.modifyWebpackConfig = require('./config/modifyWebpack');
-exports.createPages = require('./config/createPages');
+exports.modifyBabelrc = require('./config/babelrc.config');
+exports.modifyWebpackConfig = require('./config/webpack.config');
+exports.createPages = require('./config/createPages.config');

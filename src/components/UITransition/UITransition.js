@@ -33,8 +33,8 @@ const UITransition = (props: Props) => {
 
   return (
     <Transition
-      {...{ onExited }}
       in={inProp}
+      onExited={onExited}
       timeout={{ enter: 0, exit: exitTimeout }}
       unmountOnExit
     >

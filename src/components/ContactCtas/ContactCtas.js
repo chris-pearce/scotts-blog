@@ -12,9 +12,7 @@ const ContactCta = (props: Props) => {
   return (
     <a
       className="c-contact-ctas__item"
-      href={
-        isEmail ? 'mailto:info@citychiropractor.com.au' : 'tel:+612-9221-0771'
-      }
+      href={isEmail ? 'mailto:info@citychiropractor.com.au' : 'tel:+612-9221-0771'}
     >
       {props.isEmail ? 'Email us' : 'Call us'}
     </a>
@@ -26,12 +24,7 @@ const ContactCtas = (props: Props) => {
   const rootClass = 'c-contact-ctas';
 
   return (
-    <div
-      className={classnames(
-        rootClass,
-        isAlternateStyle && `${rootClass}--alternate-style`
-      )}
-    >
+    <div className={classnames(rootClass, isAlternateStyle && `${rootClass}--alternate-style`)}>
       <ContactCta />
       <ContactCta isEmail />
     </div>

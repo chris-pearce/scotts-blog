@@ -4,6 +4,7 @@
    */
 
   --root-font-size: calc(var(--root-unit) / 16 * 1rem);
+  --font-size-small: calc(var(--root-font-size) - 2px);
   --font-size-large: calc(var(--root-font-size) + 2px);
 
   /**
@@ -17,6 +18,7 @@
   --color-alpha: hsla(0, 0%, 100%, 0.5);
   --color-focus: var(--color-brand);
   --color-focus-alternate: var(--color-white);
+  --color-grey: #e8eaeb;
 
   /**
    * Spacing.
@@ -54,8 +56,9 @@
    * Z-indexes.
    */
 
-  --z-index-header: 2;
-  --z-index-main: 1;
+  --z-index-header: 3;
+  --z-index-main: 2;
+  --z-index-footer: 1;
 
   /**
    * Components.
@@ -70,6 +73,9 @@
   /* Container */
   --c-container-max-width: calc(1260 / var(--root-unit) * 1rem);
   --c-container-gutter: var(--spacing-large);
+
+  /* Footer */
+  --c-footer-spacing-ends: var(--spacing-largex);
 
   /* Header */
   --c-header-spacing-ends: var(--spacing-base);

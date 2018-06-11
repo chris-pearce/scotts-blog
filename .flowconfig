@@ -1,6 +1,7 @@
 [ignore]
 <PROJECT_ROOT>/.vscode/.*
 <PROJECT_ROOT>/public/.*
+<PROJECT_ROOT>/config/.*
 
 [include]
 
@@ -9,11 +10,12 @@
 [lints]
 
 [options]
-module.system.node.resolve_dirname=node_modules
-module.system.node.resolve_dirname=src
-module.system.node.resolve_dirname=src/assets/
-module.file_ext=.json
+module.name_mapper='^\(.*\)$' -> '<PROJECT_ROOT>/\1'
+module.use_strict=true
 esproposal.decorators=ignore
 emoji=true
+suppress_comment=\\(.\\|\n\\)*\\$FlowExpectError
+suppress_comment=\\(.\\|\n\\)*\\$FlowIgnore
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
 
 [strict]

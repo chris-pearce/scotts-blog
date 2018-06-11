@@ -1,4 +1,4 @@
 module.exports = ({ babelrc }) => ({
   ...babelrc,
-  presets: babelrc.presets.concat(['flow']),
+  presets: babelrc.presets.concat(['react', 'flow']),
 });

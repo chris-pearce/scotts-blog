@@ -1,3 +1,4 @@
-flow-typed/npm
-package.json
 .vscode
+flow-typed/npm
+public
+package.json

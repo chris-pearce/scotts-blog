@@ -1,16 +1,7 @@
 // @flow
-import { BREAKPOINTS } from './breakpoints';
-import { FRAGMENT_INDENTIFIERS } from './fragment-identifiers';
-import { KEY_CODES } from './key-codes';
-import { PAGE_NAMES } from './page-names';
-import { UI_SIZES } from './ui-sizes';
-import { UTILITY_CLASSES } from './utility-classes';
-
-export {
-  BREAKPOINTS,
-  FRAGMENT_INDENTIFIERS,
-  KEY_CODES,
-  PAGE_NAMES,
-  UI_SIZES,
-  UTILITY_CLASSES,
-};
+export { default as BREAKPOINTS } from './breakpoints';
+export { default as FRAGMENT_INDENTIFIERS } from './fragment-identifiers';
+export { default as KEY_CODES } from './key-codes';
+export { default as PAGE_NAMES } from './page-names';
+export { default as UI_SIZES } from './ui-sizes';
+export { default as UTILITY_CLASSES } from './utility-classes';

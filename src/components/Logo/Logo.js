@@ -1,7 +1,7 @@
 // @flow
 import Link from 'gatsby-link';
 
-import logoImage from 'images/logo.svg';
+import logoImage from 'src/assets/images/logo.svg';
 
 const Logo = () => (
   <Link className="c-logo" to="/">
@@ -9,4 +9,4 @@ const Logo = () => (
   </Link>
 );
 
-export { Logo };
+export default Logo;

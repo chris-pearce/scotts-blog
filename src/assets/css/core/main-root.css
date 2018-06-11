@@ -1,0 +1,13 @@
+html {
+  color: var(--color-brand);
+  font-size: var(--root-font-size);
+}
+
+/**
+ * 1. Needed so that `<MasterLayout>`s minimum height is the height of the
+ *    viewport.
+ */
+
+body {
+  min-height: 100vh; /* 1 */
+}

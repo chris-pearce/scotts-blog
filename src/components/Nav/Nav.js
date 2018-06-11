@@ -1,8 +1,8 @@
 // @flow
 import Link from 'gatsby-link';
 
-import { PAGE_NAMES } from 'constants/index';
-import { toLowercaseHyphenDelimited } from 'utilities';
+import { PAGE_NAMES } from 'src/constants';
+import { toLowercaseHyphenDelimited } from 'src/utilities';
 
 type Props = {
   isMobile?: boolean,
@@ -62,4 +62,4 @@ const Nav = (props: Props) => {
   );
 };
 
-export { Nav };
+export default Nav;

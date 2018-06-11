@@ -1,12 +1,11 @@
 // @flow
 import classnames from 'classnames';
 
-type Props = {
+type CtaProps = {
   isEmail?: boolean,
-  isAlternateStyle?: boolean,
 };
 
-const ContactCta = (props: Props) => {
+const Cta = (props: CtaProps) => {
   const { isEmail = false } = props;
 
   return (
@@ -21,6 +20,10 @@ const ContactCta = (props: Props) => {
   );
 };
 
+type Props = {
+  isAlternateStyle?: boolean,
+};
+
 const ContactCtas = (props: Props) => {
   const { isAlternateStyle = false } = props;
   const rootClass = 'c-contact-ctas';
@@ -32,10 +35,10 @@ const ContactCtas = (props: Props) => {
         isAlternateStyle && `${rootClass}--alternate-style`
       )}
     >
-      <ContactCta />
-      <ContactCta isEmail />
+      <Cta />
+      <Cta isEmail />
     </div>
   );
 };
 
-export { ContactCtas };
+export default ContactCtas;

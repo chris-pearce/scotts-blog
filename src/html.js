@@ -1,15 +1,10 @@
 // @flow
-import { Component } from 'react';
-/*  eslint-disable
-      react/prefer-stateless-function,
-      global-require,
-      react/prop-types,
-      react/no-danger
-*/
+import * as React from 'react';
 
 let stylesStr;
 if (process.env.NODE_ENV === `production`) {
   try {
+    // $FlowIgnore
     stylesStr = require(`!raw-loader!../public/styles.css`);
   } catch (e) {
     // eslint-disable-next-line no-console
@@ -17,35 +12,41 @@ if (process.env.NODE_ENV === `production`) {
   }
 }
 
-module.exports = class HTML extends Component {
-  render() {
-    let css;
-    if (process.env.NODE_ENV === `production`) {
-      css = (
-        <style
-          id="gatsby-inlined-css"
-          dangerouslySetInnerHTML={{ __html: stylesStr }}
-        />
-      );
-    }
-    return (
-      <html {...this.props.htmlAttributes} lang="en">
-        <head>
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          {this.props.headComponents}
-          {css}
-        </head>
-        <body {...this.props.bodyAttributes}>
-          {this.props.preBodyComponents}
-          <div
-            key="body"
-            id="___gatsby"
-            dangerouslySetInnerHTML={{ __html: this.props.body }}
-          />
-          {this.props.postBodyComponents}
-        </body>
-      </html>
+type Props = {
+  body: string,
+  headComponents: React.Node,
+  postBodyComponents: React.Node,
+  preBodyComponents: React.Node,
+};
+
+const HTML = (props: Props) => {
+  const { body, headComponents, postBodyComponents, preBodyComponents } = props;
+  let css;
+  if (process.env.NODE_ENV === `production`) {
+    css = (
+      <style
+        id="gatsby-inlined-css"
+        dangerouslySetInnerHTML={{ __html: stylesStr }}
+      />
     );
   }
+  return (
+    <html lang="en">
+      <head>
+        {headComponents}
+        {css}
+      </head>
+      <body>
+        {preBodyComponents}
+        <div
+          key="body"
+          id="___gatsby"
+          dangerouslySetInnerHTML={{ __html: body }}
+        />
+        {postBodyComponents}
+      </body>
+    </html>
+  );
 };
+
+export default HTML;

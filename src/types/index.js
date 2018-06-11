@@ -1,5 +1,15 @@
 // @flow
-import typeof { UI_SIZES } from 'constants/index';
+import typeof { UI_SIZES } from 'src/constants/index';
+
+export type SiteTitle = {
+  data: {
+    site: {
+      siteMetadata: {
+        title: string,
+      },
+    },
+  },
+};
 
 /**
  * UI.

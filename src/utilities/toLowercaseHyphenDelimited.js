@@ -1,5 +1,4 @@
 // @flow
-const toLowercaseHyphenDelimited = (str: string) =>
-  str && str.replace(/\s+/g, '-').toLowerCase();
-
-export { toLowercaseHyphenDelimited };
+export default function toLowercaseHyphenDelimited(str: string) {
+  return str.replace(/\s+/g, '-').toLowerCase();
+}

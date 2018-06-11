@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const paths = require('./paths');
+
 const postCSSConfig = require('./postcss.config');
-const svgConfig = require('./svg.config');
+const paths = require('./paths');
 
 /**
  * ✌︎ Resources
@@ -11,34 +11,29 @@ const svgConfig = require('./svg.config');
  */
 module.exports = ({ config }) => {
   config.merge({
-    resolve: {
-      alias: {
-        components: `${paths.src}/components`,
-        constants: `${paths.src}/constants`,
-        css: `${paths.src}/assets/css`,
-        images: `${paths.src}/assets/images`,
-        utilities: `${paths.src}/utilities`,
-      },
-      root: paths.src,
-    },
     postcss(wp) {
       return postCSSConfig(wp);
     },
     plugins: [
       new BundleAnalyzerPlugin({
         analyzerMode: 'static',
-        reportFilename: `${paths.public}/bundleAnalyzerReport.html`,
+        logLevel: 'silent',
         openAnalyzer: false,
+        reportFilename: `${paths.public}/bundleAnalyzerReport.html`,
       }),
       new webpack.ProvidePlugin({
         React: 'react',
       }),
     ],
+    resolve: {
+      modulesDirectories: [paths.root, 'node_modules'],
+      extensions: ['', '.js', '.jsx', '.json'],
+    },
   });
 
   config.loader('svg', {
     test: /\.svg$/,
-    loader: `svgo-loader?${svgConfig}`,
+    loader: `svgo-loader?${require('./svg.config')}`,
   });
 
   return config;

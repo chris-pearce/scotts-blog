@@ -1,6 +1,6 @@
 // @flow
-import { Container } from 'components';
-import { FRAGMENT_INDENTIFIERS } from 'constants/index';
+import { Container } from 'src/components';
+import { FRAGMENT_INDENTIFIERS } from 'src/constants';
 
 type Props = {
   children: Function,
@@ -18,4 +18,4 @@ const Main = (props: Props) => {
   );
 };
 
-export { Main };
+export default Main;

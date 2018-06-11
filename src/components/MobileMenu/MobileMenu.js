@@ -9,12 +9,12 @@ import {
   Heading,
   MobileMenuTrigger,
   Nav,
-} from 'components';
-import { UI_SIZES } from 'constants/index';
+} from 'src/components';
+import { UI_SIZES } from 'src/constants';
 
 type Props = {
-  onClick: Function,
   className?: string,
+  onClick: Function,
 };
 
 const MobileMenu = (props: Props) => {
@@ -56,4 +56,5 @@ const MobileMenu = (props: Props) => {
     </CloseOnEscape>
   );
 };
-export { MobileMenu };
+
+export default MobileMenu;

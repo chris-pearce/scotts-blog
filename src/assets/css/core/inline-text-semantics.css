@@ -1,6 +1,7 @@
 a {
   color: var(--color-link);
   text-decoration: none;
+  text-decoration-skip: edges;
 }
 
 a:focus,

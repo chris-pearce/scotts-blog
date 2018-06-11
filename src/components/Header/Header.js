@@ -2,7 +2,7 @@
 import { Fragment } from 'react';
 import Media from 'react-media';
 
-import { BREAKPOINTS } from 'constants/index';
+import { BREAKPOINTS } from 'src/constants';
 import {
   ContactCtas,
   Container,
@@ -11,7 +11,7 @@ import {
   MobileMenuTrigger,
   Nav,
   UITransition,
-} from 'components';
+} from 'src/components';
 
 type State = {
   isMobileMenuOpen: boolean,
@@ -49,7 +49,7 @@ class Header extends React.Component<{}, State> {
         <Container>
           <div className="c-header__inner">
             <Logo />
-            <Media query={`(max-width: ${BREAKPOINTS.large})`}>
+            <Media query={`(max-width: ${BREAKPOINTS.large || ''})`}>
               {matches =>
                 matches ? (
                   <Fragment>
@@ -73,4 +73,4 @@ class Header extends React.Component<{}, State> {
   }
 }
 
-export { Header };
+export default Header;

@@ -2,7 +2,7 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-import { UI_SIZES } from 'constants/index';
+import { UI_SIZES } from 'src/constants';
 
 const { ...ALLOWED_SIZES } = UI_SIZES;
 
@@ -31,4 +31,4 @@ const Container = (props: Props) => {
   );
 };
 
-export { Container };
+export default Container;

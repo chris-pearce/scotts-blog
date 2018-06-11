@@ -1,23 +1,18 @@
-const postcssImport = require('postcss-import');
-const postcssNext = require('postcss-cssnext');
-const postcssBrowserReporter = require('postcss-browser-reporter');
-const postcssReporter = require('postcss-reporter');
-const tokens = require('./../src/constants/tokens.json');
+const tokens = require('../src/constants/tokens.json');
 
 module.exports = wp => [
-  postcssImport({
+  require('postcss-import')({
     addDependencyTo: wp,
   }),
-  postcssNext({
+  require('postcss-cssnext')({
     browsers: ['> 1%', 'not IE 11'],
     features: {
       customProperties: {
         variables: tokens,
         warnings: true,
       },
-      filter: false, // TODO: this isn't working
+      filter: false,
+      fontVariant: false,
     },
   }),
-  postcssBrowserReporter,
-  postcssReporter,
 ];

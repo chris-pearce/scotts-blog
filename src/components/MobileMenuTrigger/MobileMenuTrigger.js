@@ -20,4 +20,4 @@ const MobileMenuTrigger = (props: Props) => {
   );
 };
 
-export { MobileMenuTrigger };
+export default MobileMenuTrigger;

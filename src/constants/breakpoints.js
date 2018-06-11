@@ -1,8 +1,9 @@
 // @flow
-import { toEm } from 'utilities';
+import { toEm } from 'src/utilities';
+
 import tokens from './tokens.json';
 
-const BREAKPOINTS = Object.freeze({
+export default Object.freeze({
   small2x: null,
   smallx: null,
   small: null,
@@ -11,5 +12,3 @@ const BREAKPOINTS = Object.freeze({
   largex: null,
   large2x: null,
 });
-
-export { BREAKPOINTS };

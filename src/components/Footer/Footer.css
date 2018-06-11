@@ -1,0 +1,13 @@
+.c-footer {
+  border-top: 1px solid var(--color-grey);
+  padding-bottom: var(--c-footer-spacing-ends);
+  padding-top: var(--c-footer-spacing-ends);
+  position: relative;
+  z-index: var(--z-index-footer);
+}
+
+.c-footer__copyright {
+  display: block;
+  font-size: var(--font-size-small);
+  text-align: center;
+}

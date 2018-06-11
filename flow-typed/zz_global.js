@@ -3,7 +3,4 @@
 // encounters them
 
 declare var React: $Exports<'react'>;
-
-declare module 'graphql' {
-  declare module.exports: any;
-}
+declare var graphql: any;

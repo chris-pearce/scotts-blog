@@ -1,5 +1,5 @@
 // @flow
-import { toEm } from './toEm';
-import { toLowercaseHyphenDelimited } from './toLowercaseHyphenDelimited';
-
-export { toEm, toLowercaseHyphenDelimited };
+export { default as toEm } from './toEm';
+export {
+  default as toLowercaseHyphenDelimited,
+} from './toLowercaseHyphenDelimited';

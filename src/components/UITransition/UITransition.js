@@ -15,9 +15,9 @@ import { Transition } from 'react-transition-group';
  */
 
 type Props = {
-  in: boolean,
   children: React.Node,
   exitTimeout?: number,
+  in: boolean,
   onExited?: Function,
   type?: string,
 };
@@ -47,4 +47,4 @@ const UITransition = (props: Props) => {
   );
 };
 
-export { UITransition };
+export default UITransition;

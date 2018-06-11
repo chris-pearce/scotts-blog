@@ -1,5 +1,5 @@
 // @flow
-const PAGE_NAMES = Object.freeze({
+export default Object.freeze({
   about: 'About',
   blog: 'Blog',
   contact: 'Contact',
@@ -7,5 +7,3 @@ const PAGE_NAMES = Object.freeze({
   hoursAndFees: 'Hours and Fees',
   whatToExpect: 'What To Expect',
 });
-
-export { PAGE_NAMES };

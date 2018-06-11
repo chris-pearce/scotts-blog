@@ -1,8 +1,10 @@
 @import '../../../components/ContactCtas/ContactCtas.css';
 @import '../../../components/Container/Container.css';
+@import '../../../components/Footer/Footer.css';
 @import '../../../components/Header/Header.css';
 @import '../../../components/Heading/Heading.css';
 @import '../../../components/Logo/Logo.css';
+@import '../../../components/MasterLayout/MasterLayout.css';
 @import '../../../components/Main/Main.css';
 @import '../../../components/MobileMenu/MobileMenu.css';
 @import '../../../components/MobileMenuTrigger/MobileMenuTrigger.css';

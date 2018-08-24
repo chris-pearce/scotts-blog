@@ -7,7 +7,6 @@ if (process.env.NODE_ENV === `production`) {
     // $FlowIgnore
     stylesStr = require(`!raw-loader!../public/styles.css`);
   } catch (e) {
-    // eslint-disable-next-line no-console
     console.log(e);
   }
 }

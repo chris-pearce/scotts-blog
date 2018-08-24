@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react';
 import { Transition } from 'react-transition-group';
+import './UITransition.css';
 
 /**
  * Transitions via "react-transition-group", see:
@@ -39,7 +40,7 @@ const UITransition = (props: Props) => {
       unmountOnExit
     >
       {state =>
-        React.cloneElement(children, {
+        React.cloneElement(React.Children.only(children), {
           className: `${type} is-${state}`,
         })
       }

@@ -1,3 +1,5 @@
+@import 'src/assets/css/config';
+
 .c-container {
   margin: 0 auto;
   max-width: var(--c-container-max-width);

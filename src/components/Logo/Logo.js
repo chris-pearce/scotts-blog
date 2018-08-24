@@ -2,6 +2,7 @@
 import Link from 'gatsby-link';
 
 import logoImage from 'src/assets/images/logo.svg';
+import './Logo.css';
 
 const Logo = () => (
   <Link className="c-logo" to="/">

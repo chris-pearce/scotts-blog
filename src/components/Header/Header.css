@@ -1,3 +1,5 @@
+@import 'src/assets/css/config';
+
 .c-header {
   background-color: var(--c-header-color);
   background-image: linear-gradient(

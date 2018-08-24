@@ -1,3 +1,5 @@
+@import 'src/assets/css/config';
+
 .c-mobile-menu-trigger {
   background-clip: content-box;
   height: var(--c-mobile-menu-trigger-size);

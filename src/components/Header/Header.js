@@ -1,17 +1,15 @@
 // @flow
 import { Fragment } from 'react';
 import Media from 'react-media';
-
-import { BREAKPOINTS } from 'src/constants';
-import {
-  ContactCtas,
-  Container,
-  Logo,
-  MobileMenu,
-  MobileMenuTrigger,
-  Nav,
-  UITransition,
-} from 'src/components';
+import ContactCtas from 'src/components/ContactCtas/ContactCtas';
+import Container from 'src/components/Container/Container';
+import Logo from 'src/components/Logo/Logo';
+import MobileMenu from 'src/components/MobileMenu/MobileMenu';
+import MobileMenuTrigger from 'src/components/MobileMenuTrigger/MobileMenuTrigger';
+import Nav from 'src/components/Nav/Nav';
+import UITransition from 'src/components/UITransition/UITransition';
+import breakpoints from 'src/constants/tokens/breakpoints';
+import './Header.css';
 
 type State = {
   isMobileMenuOpen: boolean,
@@ -49,7 +47,7 @@ class Header extends React.Component<{}, State> {
         <Container>
           <div className="c-header__inner">
             <Logo />
-            <Media query={`(max-width: ${BREAKPOINTS.large || ''})`}>
+            <Media query={`(max-width: ${breakpoints.breakpointLarge})`}>
               {matches =>
                 matches ? (
                   <Fragment>

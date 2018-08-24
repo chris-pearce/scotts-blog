@@ -1,38 +1,32 @@
 // @flow
 import * as React from 'react';
 
-import { KEY_CODES } from 'src/constants';
+import keyCodes from 'src/constants/keyCodes';
 
 type Props = {
-  callback: Function,
   children: React.Node,
+  onKeydown: Function,
 };
-
-const document = global.document.querySelector('document');
 
 class CloseOnEscape extends React.Component<Props> {
   componentDidMount() {
-    document.addEventListener('keydown', this.invokeCallback);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('keydown', this.onKeydown);
+    }
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.invokeCallback);
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('keydown', this.onKeydown);
+    }
   }
 
-  invokeCallback = (event: SyntheticKeyboardEvent<>) => {
-    const { callback } = this.props;
-
-    if (event.key !== KEY_CODES.escape) return null;
-
-    return callback();
+  onKeydown = (event: SyntheticKeyboardEvent<>) => {
+    if (event.key === keyCodes.escape) return this.props.onKeydown();
   };
 
   render() {
-    const { callback, children } = this.props;
-
-    if (!callback && !children) return null;
-
-    return children;
+    return React.Children.only(this.props.children);
   }
 }
 

@@ -3,6 +3,7 @@ import Link from 'gatsby-link';
 
 import { PAGE_NAMES } from 'src/constants';
 import { toLowercaseHyphenDelimited } from 'src/utilities';
+import './Nav.css';
 
 type Props = {
   isMobile?: boolean,

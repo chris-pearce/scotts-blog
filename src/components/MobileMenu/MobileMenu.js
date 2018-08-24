@@ -11,6 +11,7 @@ import {
   Nav,
 } from 'src/components';
 import { UI_SIZES } from 'src/constants';
+import './MobileMenu.css';
 
 type Props = {
   className?: string,
@@ -19,13 +20,10 @@ type Props = {
 
 const MobileMenu = (props: Props) => {
   const { onClick, className } = props;
-
-  if (!onClick) return null;
-
   const id = 'mobile-menu-heading';
 
   return (
-    <CloseOnEscape callback={onClick}>
+    <CloseOnEscape onKeydown={onClick}>
       <div
         aria-labelledby={id}
         aria-modal="true"

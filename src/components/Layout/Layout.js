@@ -1,17 +1,21 @@
 // @flow
-import { Fragment } from 'react';
+import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
+import Header from 'src/components/Header/Header';
+import Main from 'src/components/Main/Main';
+import Footer from 'src/components/Footer/Footer';
+import fragmentIdentifiers from 'src/constants/fragmentIdentifiers';
+import utilClasses from 'src/constants/utilClasses';
 import 'src/assets/css/index.css';
-import { Footer, Header, MasterLayout, Main } from 'src/components';
-import { FRAGMENT_INDENTIFIERS, UTILITY_CLASSES } from 'src/constants';
+import 'Layout.css';
 
 if (typeof window !== 'undefined') {
   require('what-input');
 }
 
 type Props = {
-  children: Function,
+  children: React.Node,
   data: {
     site: {
       siteMetadata: {
@@ -21,34 +25,32 @@ type Props = {
   },
 };
 
-const Root = (props: Props) => {
+const Layout = (props: Props) => {
   const { children, data } = props;
   const { title } = data.site.siteMetadata;
 
-  if (!children) return null;
-
   return (
-    <Fragment>
+    <>
       <Helmet defaultTitle={title} titleTemplate={`%s | ${title}`}>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Helmet>
       <a
-        className={UTILITY_CLASSES.hideVisually}
-        href={`#${FRAGMENT_INDENTIFIERS.main}`}
+        className={utilClasses.hideVisually}
+        href={`#${fragmentIdentifiers.main}`}
       >
         Skip to the main content
       </a>
-      <MasterLayout>
+      <div className="c-master-layout">
         <Header />
-        <Main>{children()}</Main>
+        <Main>{children}</Main>
         <Footer />
-      </MasterLayout>
-    </Fragment>
+      </div>
+    </>
   );
 };
 
-export default Root;
+export default Layout;
 
 export const query = graphql`
   query LayoutQuery {

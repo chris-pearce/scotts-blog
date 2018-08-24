@@ -1,5 +1,6 @@
 // @flow
-import { Container } from 'src/components';
+import Container from 'src/components/Container/Container';
+import './Footer.css';
 
 const Footer = () => (
   <footer className="c-footer">

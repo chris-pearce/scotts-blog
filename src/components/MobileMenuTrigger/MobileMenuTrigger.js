@@ -1,4 +1,6 @@
 // @flow
+import './MobileMenuTrigger.css';
+
 type Props = {
   isOpen?: boolean,
   onClick?: Function,

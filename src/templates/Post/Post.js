@@ -6,7 +6,6 @@ type Props = {
 const Post = (props: Props) => {
   const article = props.data.contentfulArticle;
 
-  /* eslint-disable react/no-danger */
   return (
     <article>
       <h1>{article.title}</h1>
@@ -17,7 +16,6 @@ const Post = (props: Props) => {
       />
     </article>
   );
-  /* eslint-enable react/no-danger */
 };
 
 export default Post;

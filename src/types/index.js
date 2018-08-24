@@ -1,19 +1,6 @@
 // @flow
-import typeof { UI_SIZES } from 'src/constants/index';
+import uiSizes from 'src/constants/uiSizes';
+import cssUnits from 'src/constants/cssUnits';
 
-export type SiteTitle = {
-  data: {
-    site: {
-      siteMetadata: {
-        title: string,
-      },
-    },
-  },
-};
-
-/**
- * UI.
- */
-
-// Sizes
-export type UISizes = $Keys<UI_SIZES>;
+export type CssUnits = $Keys<typeof cssUnits>;
+export type UISizes = $Keys<typeof uiSizes>;

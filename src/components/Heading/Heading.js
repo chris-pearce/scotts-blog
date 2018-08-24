@@ -25,9 +25,6 @@ const Heading = (props: Props) => {
     spacing,
     size = UI_SIZES.largex,
   } = props;
-
-  if (!text) return null;
-
   const Tag = `h${rank.toString()}`;
   const rootClass = 'c-heading';
 

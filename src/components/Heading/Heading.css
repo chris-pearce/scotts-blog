@@ -1,3 +1,5 @@
+@import 'src/assets/css/config';
+
 .c-heading--smallx {
   font-variant-caps: all-small-caps;
   letter-spacing: 0.2ch;

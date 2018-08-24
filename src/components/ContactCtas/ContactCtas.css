@@ -1,3 +1,5 @@
+@import 'src/assets/css/config';
+
 .c-contact-ctas__item {
   border: 2px solid var(--c-contact-ctas-color);
   border-radius: 100px;

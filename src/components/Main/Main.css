@@ -1,3 +1,5 @@
+@import 'src/assets/css/config';
+
 .c-main {
   position: relative;
   transition: filter var(--transition-smooth);

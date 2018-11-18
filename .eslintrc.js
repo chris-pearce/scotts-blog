@@ -1,17 +1,35 @@
 module.exports = {
-  env: {
-    browser: true,
-    node: true,
+  extends: [
+    'airbnb',
+    'plugin:flowtype/recommended',
+    'prettier',
+    'prettier/flowtype',
+    'prettier/react',
+  ],
+  parser: 'babel-eslint',
+  parserOptions: {
+    ecmaVersion: 2016,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
-  extends: ['@getatomi/eslint-config'],
+  plugins: ['react', 'flowtype', 'prettier'],
+  env: {
+    es6: true,
+    node: true,
+    browser: true,
+  },
   globals: {
-    graphql: true,
     React: true,
   },
   root: true,
   rules: {
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'react/jsx-filename-extension': 'off',
+    'react/require-default-props': 'off',
     'jsx-a11y/anchor-is-valid': [
-      2,
+      'error',
       {
         components: ['Link'],
         specialLink: ['to'],

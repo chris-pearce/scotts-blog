@@ -5,7 +5,7 @@
  */
 
 .c-nav--mobile {
-  margin-bottom: var(--spacing-large);
+  margin-bottom: var(--spacing-large1x);
 }
 
 .c-nav--mobile a {
@@ -30,12 +30,12 @@
 }
 
 .c-nav--non-mobile li:not(:last-child) {
-  margin-right: var(--spacing-base);
+  margin-right: var(--spacing-default);
 }
 
-@media (--from-largex) {
+@media (--from-large2x) {
   .c-nav--non-mobile li:not(:last-child) {
-    margin-right: var(--spacing-small);
+    margin-right: var(--spacing-small1x);
   }
 }
 
@@ -47,11 +47,11 @@
   outline-color: var(--color-focus-alternate);
 }
 
-@media (--from-largex) {
+@media (--from-large2x) {
   .c-nav--non-mobile a {
     border-radius: 100px;
     display: block;
-    padding: var(--spacing-small2x) var(--spacing-base);
+    padding: var(--spacing-small3x) var(--spacing-default);
     transition: background-color 0.1s linear;
   }
 

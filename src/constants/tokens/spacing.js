@@ -1,9 +1,8 @@
 // @flow
 import { pxToRem } from 'src/utils/pxToRelativeUnit';
+import rootFontSizes from 'src/constants/rootFontSizes';
 
-import rootPixelSizes from '../rootPixelSizes';
-
-const { rootPixelSizeSite } = rootPixelSizes;
+const { app } = rootFontSizes;
 
 /**
  * Root: 16
@@ -11,15 +10,15 @@ const { rootPixelSizeSite } = rootPixelSizes;
  * Increase: 20, 24, 28, 32, 40, 48, 56
  */
 export default Object.freeze({
-  spacingLarge: pxToRem(rootPixelSizeSite + 4),
-  spacingLarge1X: pxToRem(rootPixelSizeSite + 8),
-  spacingLarge2X: pxToRem(rootPixelSizeSite + 12),
-  spacingLarge3X: pxToRem(rootPixelSizeSite + 16),
-  spacingLarge4X: pxToRem(rootPixelSizeSite + 24),
-  spacingLarge5X: pxToRem(rootPixelSizeSite + 32),
-  spacingLarge6X: pxToRem(rootPixelSizeSite + 38),
-  spacingRoot: pxToRem(rootPixelSizeSite),
-  spacingSmall: pxToRem(rootPixelSizeSite - 4),
-  spacingSmall1X: pxToRem(rootPixelSizeSite - 8),
-  spacingSmall2X: pxToRem(rootPixelSizeSite - 12),
+  spacingDefault: pxToRem(app),
+  spacingLarge1x: pxToRem(app + 4),
+  spacingLarge2x: pxToRem(app + 8),
+  spacingLarge3x: pxToRem(app + 12),
+  spacingLarge4x: pxToRem(app + 16),
+  spacingLarge5x: pxToRem(app + 24),
+  spacingLarge6x: pxToRem(app + 32),
+  spacingLarge7x: pxToRem(app + 38),
+  spacingSmall1x: pxToRem(app - 4),
+  spacingSmall2x: pxToRem(app - 8),
+  spacingSmall3x: pxToRem(app - 12),
 });

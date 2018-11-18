@@ -6,28 +6,24 @@
  * Downwards direction.
  */
 
+.u-spacing-down-small3x {
+  margin-bottom: var(--spacing-small3x) !important;
+}
+
 .u-spacing-down-small2x {
-  margin-bottom: var(--spacing-small2x) !important;
+  margin-bottom: var(--spacing-small3x) !important;
 }
 
-.u-spacing-down-smallx {
-  margin-bottom: var(--spacing-smallx) !important;
+.u-spacing-down-small1x {
+  margin-bottom: var(--spacing-small1x) !important;
 }
 
-.u-spacing-down-small {
-  margin-bottom: var(--spacing-small) !important;
+.u-spacing-down-default {
+  margin-bottom: var(--spacing-default) !important;
 }
 
-.u-spacing-down-base {
-  margin-bottom: var(--spacing-base) !important;
-}
-
-.u-spacing-down-large {
-  margin-bottom: var(--spacing-large) !important;
-}
-
-.u-spacing-down-largex {
-  margin-bottom: var(--spacing-largex) !important;
+.u-spacing-down-large1x {
+  margin-bottom: var(--spacing-large1x) !important;
 }
 
 .u-spacing-down-large2x {
@@ -50,32 +46,32 @@
   margin-bottom: var(--spacing-large6x) !important;
 }
 
+.u-spacing-down-large7x {
+  margin-bottom: var(--spacing-large7x) !important;
+}
+
 /*
  * Upwards direction.
  */
 
+.u-spacing-up-small3x {
+  margin-top: var(--spacing-small3x) !important;
+}
+
 .u-spacing-up-small2x {
-  margin-top: var(--spacing-small2x) !important;
+  margin-top: var(--spacing-small3x) !important;
 }
 
-.u-spacing-up-smallx {
-  margin-top: var(--spacing-smallx) !important;
+.u-spacing-up-small1x {
+  margin-top: var(--spacing-small1x) !important;
 }
 
-.u-spacing-up-small {
-  margin-top: var(--spacing-small) !important;
+.u-spacing-up-default {
+  margin-top: var(--spacing-default) !important;
 }
 
-.u-spacing-up-base {
-  margin-top: var(--spacing-base) !important;
-}
-
-.u-spacing-up-large {
-  margin-top: var(--spacing-large) !important;
-}
-
-.u-spacing-up-largex {
-  margin-top: var(--spacing-largex) !important;
+.u-spacing-up-large1x {
+  margin-top: var(--spacing-large1x) !important;
 }
 
 .u-spacing-up-large2x {
@@ -96,4 +92,8 @@
 
 .u-spacing-up-large6x {
   margin-top: var(--spacing-large6x) !important;
+}
+
+.u-spacing-up-large7x {
+  margin-top: var(--spacing-large7x) !important;
 }

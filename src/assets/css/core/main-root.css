@@ -1,6 +1,6 @@
 html {
   color: var(--color-brand);
-  font-size: var(--root-font-size);
+  font-size: var(--font-size-default);
 }
 
 /**

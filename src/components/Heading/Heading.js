@@ -1,29 +1,27 @@
 // @flow
 import * as React from 'react';
 import classnames from 'classnames';
-
 import type { UISizes } from 'src/types';
-import { UI_SIZES, UTILITY_CLASSES } from 'src/constants';
-
-const { ...ALLOWED_SIZES } = UI_SIZES;
+import uiSizes from 'src/constants/uiSizes';
+import utilityClasses from 'src/constants/utilityClasses';
 
 type Props = {
   id?: string,
   isVisuallyHidden?: boolean,
   rank?: 1 | 2 | 3 | 4 | 5 | 6,
-  size?: $Keys<typeof ALLOWED_SIZES>,
+  size?: UISizes,
   spacing?: UISizes,
   text: string,
 };
 
-const Heading = (props: Props) => {
+export default function(props: Props) {
   const {
     text,
     id,
     isVisuallyHidden,
     rank = 2,
     spacing,
-    size = UI_SIZES.largex,
+    size = uiSizes.large2x,
   } = props;
   const Tag = `h${rank.toString()}`;
   const rootClass = 'c-heading';
@@ -31,14 +29,12 @@ const Heading = (props: Props) => {
   return (
     <Tag
       className={classnames(`${rootClass} ${rootClass}--${size}`, {
-        [`${UTILITY_CLASSES.spacingDown}${spacing || ''}`]: spacing,
-        [UTILITY_CLASSES.hideVisually]: isVisuallyHidden,
+        [`${utilityClasses.spacingDown}${spacing || ''}`]: spacing,
+        [utilityClasses.hideVisually]: isVisuallyHidden,
       })}
       id={id}
     >
       {text}
     </Tag>
   );
-};
-
-export default Heading;
+}

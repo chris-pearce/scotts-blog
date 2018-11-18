@@ -1,6 +1,4 @@
 .vscode
 flow-typed/npm
 public
-!.eslintrc.js
-!.stylelintrc.js
 

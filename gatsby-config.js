@@ -4,7 +4,8 @@ module.exports = {
     title: 'City Chiropractic Care',
   },
   plugins: [
-    'gatsby-plugin-react-next',
+    'gatsby-plugin-flow',
+    'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-contentful',
@@ -16,5 +17,4 @@ module.exports = {
     },
     'gatsby-transformer-remark',
   ],
-  polyfill: false,
 };

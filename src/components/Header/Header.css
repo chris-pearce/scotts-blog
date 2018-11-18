@@ -13,7 +13,7 @@
   z-index: var(--z-index-header);
 }
 
-@media (--from-largex) {
+@media (--from-large2x) {
   .c-header {
     padding-bottom: var(--c-header-spacing-ends-large);
     padding-top: var(--c-header-spacing-ends-large);

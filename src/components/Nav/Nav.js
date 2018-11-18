@@ -1,8 +1,7 @@
 // @flow
-import Link from 'gatsby-link';
-
-import { PAGE_NAMES } from 'src/constants';
-import { toLowercaseHyphenDelimited } from 'src/utilities';
+import { Link } from 'gatsby';
+import pageNames from 'src/constants/pageNames';
+import toLowercaseHyphenDelimited from 'src/utils/toLowercaseHyphenDelimited';
 import './Nav.css';
 
 type Props = {
@@ -13,31 +12,31 @@ type Props = {
 const data = [
   {
     id: 1,
-    name: PAGE_NAMES.whatToExpect,
+    name: pageNames.whatToExpect,
   },
   {
     id: 2,
-    name: PAGE_NAMES.hoursAndFees,
+    name: pageNames.hoursAndFees,
   },
   {
     id: 3,
-    name: PAGE_NAMES.about,
+    name: pageNames.about,
   },
   {
     id: 4,
-    name: PAGE_NAMES.faqs,
+    name: pageNames.faqs,
   },
   {
     id: 5,
-    name: PAGE_NAMES.blog,
+    name: pageNames.blog,
   },
   {
     id: 6,
-    name: PAGE_NAMES.contact,
+    name: pageNames.contact,
   },
 ];
 
-const Nav = (props: Props) => {
+export default function(props: Props) {
   const { isMobile = true, onClick } = props;
   const rootClass = 'c-nav';
 
@@ -61,6 +60,4 @@ const Nav = (props: Props) => {
       </ul>
     </nav>
   );
-};
-
-export default Nav;
+}

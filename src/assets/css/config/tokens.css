@@ -3,9 +3,9 @@
    * Typography.
    */
 
-  --root-font-size: calc(var(--root-unit) / 16 * 1rem);
-  --font-size-small: calc(var(--root-font-size) - 2px);
-  --font-size-large: calc(var(--root-font-size) + 2px);
+  --font-size-default: calc(var(--root-unit) / 16 * 1rem);
+  --font-size-small: calc(var(--font-size-default) - 2px);
+  --font-size-large: calc(var(--font-size-default) + 2px);
 
   /**
    * Colours.
@@ -23,28 +23,28 @@
   /**
    * Spacing.
    *
-   * Base: 16
+   * Default: 16
    * Smaller: 12, 8, 4
    * Larger: 20, 24, 28, 32, 40, 48, 56
    */
 
-  --spacing-small2x: calc(var(--root-font-size) / 4);
-  --spacing-smallx: calc(var(--root-font-size) / 2);
-  --spacing-small: calc(var(--root-font-size) - 4px);
-  --spacing-base: var(--root-font-size);
-  --spacing-large: calc(var(--root-font-size) + 4px);
-  --spacing-largex: calc(var(--root-font-size) + 8px);
-  --spacing-large2x: calc(var(--root-font-size) + 12px);
-  --spacing-large3x: calc(var(--root-font-size) + 16px);
-  --spacing-large4x: calc(var(--root-font-size) + 20px);
-  --spacing-large5x: calc(var(--root-font-size) + 28px);
-  --spacing-large6x: calc(var(--root-font-size) + 36px);
+  --spacing-default: var(--font-size-default);
+  --spacing-small1x: calc(var(--font-size-default) - 4px);
+  --spacing-small2x: calc(var(--font-size-default) / 2);
+  --spacing-small3x: calc(var(--font-size-default) / 4);
+  --spacing-large1x: calc(var(--font-size-default) + 4px);
+  --spacing-large2x: calc(var(--font-size-default) + 8px);
+  --spacing-large3x: calc(var(--font-size-default) + 12px);
+  --spacing-large4x: calc(var(--font-size-default) + 16px);
+  --spacing-large5x: calc(var(--font-size-default) + 20px);
+  --spacing-large6x: calc(var(--font-size-default) + 28px);
+  --spacing-large7x: calc(var(--font-size-default) + 36px);
 
   /**
-   * Accessibility/UX.
+   * Accessibility/Ux.
    */
 
-  --touch-target-size: var(--spacing-large6x);
+  --touch-target-size: var(--spacing-large7x);
 
   /**
    * Transitions.
@@ -72,14 +72,14 @@
 
   /* Container */
   --c-container-max-width: calc(1260 / var(--root-unit) * 1rem);
-  --c-container-gutter: var(--spacing-large);
+  --c-container-gutter: var(--spacing-large1x);
 
   /* Footer */
-  --c-footer-spacing-ends: var(--spacing-largex);
+  --c-footer-spacing-ends: var(--spacing-large2x);
 
   /* Header */
-  --c-header-spacing-ends: var(--spacing-base);
-  --c-header-spacing-ends-large: var(--spacing-large);
+  --c-header-spacing-ends: var(--spacing-default);
+  --c-header-spacing-ends-large: var(--spacing-large1x);
   --c-header-color: var(--color-brand);
 
   /* Mobile menu */
@@ -87,10 +87,10 @@
 
   /* Mobile menu trigger */
   --c-mobile-menu-trigger-size: var(--touch-target-size);
-  --c-mobile-menu-trigger-padding: var(--spacing-small);
+  --c-mobile-menu-trigger-padding: var(--spacing-small1x);
   --c-mobile-menu-trigger-open-bar-position-offset: 6px;
   --c-mobile-menu-trigger-close-rotate: 45deg;
 
   /* Nav */
-  --c-nav-mobile-link-padding-ends: var(--spacing-smallx);
+  --c-nav-mobile-link-padding-ends: var(--spacing-small3x);
 }

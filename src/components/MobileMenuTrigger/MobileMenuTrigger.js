@@ -6,7 +6,7 @@ type Props = {
   onClick?: Function,
 };
 
-const MobileMenuTrigger = (props: Props) => {
+export default function(props: Props) {
   const { isOpen = true, onClick } = props;
   const rootClass = 'c-mobile-menu-trigger';
 
@@ -20,6 +20,4 @@ const MobileMenuTrigger = (props: Props) => {
       <span />
     </button>
   );
-};
-
-export default MobileMenuTrigger;
+}

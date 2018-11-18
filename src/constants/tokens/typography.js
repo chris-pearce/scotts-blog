@@ -1,15 +1,12 @@
 // @flow
 import { pxToRem } from 'src/utils/pxToRelativeUnit';
+import cssUnits from 'src/constants/cssUnits';
+import rootFontSizes from 'src/constants/rootFontSizes';
 
-import cssUnits from '../cssUnits';
-import rootPixelSizes from '../rootPixelSizes';
-
-const { rootPixelSizeSite, rootPixelSizeUserAgent } = rootPixelSizes;
+const { app, userAgent } = rootFontSizes;
 
 export default Object.freeze({
-  typographySizeLarge: pxToRem(rootPixelSizeSite + 2),
-  typographySizeRoot: `${rootPixelSizeSite / rootPixelSizeUserAgent}${
-    cssUnits.rem
-  }`,
-  typographySizeSmall: pxToRem(rootPixelSizeSite - 2),
+  typographySizeLarge: pxToRem(app + 2),
+  typographySizeDefault: `${app / userAgent}${cssUnits.rem}`,
+  typographySizeSmall: pxToRem(app - 2),
 });

@@ -1,4 +1,2 @@
 // @flow
-export default Object.freeze({
-  escape: 'Escape',
-});
+export default Object.freeze({ escape: 'Escape' });

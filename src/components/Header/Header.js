@@ -1,5 +1,4 @@
 // @flow
-import { Fragment } from 'react';
 import Media from 'react-media';
 import ContactCtas from 'src/components/ContactCtas/ContactCtas';
 import Container from 'src/components/Container/Container';
@@ -15,7 +14,7 @@ type State = {
   isMobileMenuOpen: boolean,
 };
 
-class Header extends React.Component<{}, State> {
+export default class Header extends React.Component<{}, State> {
   state = {
     isMobileMenuOpen: false,
   };
@@ -32,10 +31,11 @@ class Header extends React.Component<{}, State> {
   };
 
   toggleRootClass() {
+    const { isMobileMenuOpen } = this.state;
     const root = document.documentElement;
 
     if (root) {
-      root.classList.toggle('is-mobile-menu-open', this.state.isMobileMenuOpen);
+      root.classList.toggle('is-mobile-menu-open', isMobileMenuOpen);
     }
   }
 
@@ -47,15 +47,15 @@ class Header extends React.Component<{}, State> {
         <Container>
           <div className="c-header__inner">
             <Logo />
-            <Media query={`(max-width: ${breakpoints.breakpointLarge})`}>
+            <Media query={`(max-width: ${breakpoints.breakpointLarge1x})`}>
               {matches =>
                 matches ? (
-                  <Fragment>
+                  <>
                     <MobileMenuTrigger onClick={this.onMobileMenuToggle} />
                     <UITransition in={isMobileMenuOpen}>
                       <MobileMenu onClick={this.onMobileMenuToggle} />
                     </UITransition>
-                  </Fragment>
+                  </>
                 ) : (
                   <div className="c-header__non-mobile-nav">
                     <ContactCtas isAlternateStyle />
@@ -70,5 +70,3 @@ class Header extends React.Component<{}, State> {
     );
   }
 }
-
-export default Header;

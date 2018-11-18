@@ -1,34 +1,32 @@
 // @flow
-type Props = {
-  data: Object,
-};
+/* eslint-disable react/no-danger */
+import { StaticQuery, graphql } from 'gatsby';
 
-const Post = (props: Props) => {
-  const article = props.data.contentfulArticle;
-
+export default function() {
   return (
-    <article>
-      <h1>{article.title}</h1>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: article.body.childMarkdownRemark.html,
-        }}
-      />
-    </article>
-  );
-};
-
-export default Post;
-
-export const pageQuery = graphql`
-  query postQuery($id: String!) {
-    contentfulArticle(id: { eq: $id }) {
-      title
-      body {
-        childMarkdownRemark {
-          html
+    <StaticQuery
+      query={graphql`
+        query postQuery($id: String!) {
+          contentfulArticle(id: { eq: $id }) {
+            title
+            body {
+              childMarkdownRemark {
+                html
+              }
+            }
+          }
         }
-      }
-    }
-  }
-`;
+      `}
+      render={data => (
+        <article>
+          <h1>{data.contentfulArticle.title}</h1>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.contentfulArticle.body.childMarkdownRemark.html,
+            }}
+          />
+        </article>
+      )}
+    />
+  );
+}

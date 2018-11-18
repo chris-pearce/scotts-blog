@@ -1,17 +1,19 @@
 // @flow
 import * as React from 'react';
-import { Container } from 'src/components';
-import { FRAGMENT_INDENTIFIERS } from 'src/constants';
+import Container from 'src/components/Container/Container';
+import fragmentIdentifiers from 'src/constants/fragmentIdentifiers';
 import './Main.css';
 
 type Props = {
   children: React.Node,
 };
 
-const Main = (props: Props) => (
-  <main className="c-main" id={`#${FRAGMENT_INDENTIFIERS.main}`}>
-    <Container>{props.children}</Container>
-  </main>
-);
+export default function(props: Props) {
+  const { children } = props;
 
-export default Main;
+  return (
+    <main className="c-main" id={`#${fragmentIdentifiers.main}`}>
+      <Container>{children}</Container>
+    </main>
+  );
+}

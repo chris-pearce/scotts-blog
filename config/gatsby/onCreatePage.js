@@ -1,7 +1,8 @@
-const paths = require('./paths');
+const { graphql } = require('gatsby');
+const paths = require('../paths');
 
-module.exports = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators;
+module.exports = ({ actions }) => {
+  const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
     // Query for markdown nodes to use in creating pages
@@ -24,20 +25,17 @@ module.exports = ({ boundActionCreators, graphql }) => {
           reject(result.errors);
         }
 
-        // Create post pages
-        const postTemplate = `${paths.src}/templates/Post/Post.js`;
-        // We want to create a detailed page for each product node.
-        // We'll just use the Contentful id for the slug.
+        // We want to create a detailed page for each product node. We'll just
+        // use the Contentful id for the slug.
         result.data.allContentfulArticle.edges.forEach(edge => {
-          // Gatsby uses Redux to manage its internal state.
-          // Plugins and sites can use functions like "createPage" to interact
-          // with Gatsby.
+          // Gatsby uses Redux to manage its internal state. Plugins and sites
+          // can use functions like "createPage" to interact with Gatsby.
           createPage({
             // Each page is required to have a `path` as well as a template
             // component. The`context` is optional but is often necessary so the
             // template can query data specific to each page.
             path: `/article/${edge.node.id}/`,
-            component: postTemplate,
+            component: `${paths.src}/templates/Post/Post.js`,
             context: {
               id: edge.node.id,
             },

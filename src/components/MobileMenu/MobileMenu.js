@@ -1,16 +1,13 @@
 // @flow
 import classnames from 'classnames';
 import FocusTrap from 'focus-trap-react';
-
-import {
-  CloseOnEscape,
-  ContactCtas,
-  Container,
-  Heading,
-  MobileMenuTrigger,
-  Nav,
-} from 'src/components';
-import { UI_SIZES } from 'src/constants';
+import CloseOnEscape from 'src/components/CloseOnEscape/CloseOnEscape';
+import ContactCtas from 'src/components/ContactCtas/ContactCtas';
+import Container from 'src/components/Container/Container';
+import Heading from 'src/components/Heading/Heading';
+import MobileMenuTrigger from 'src/components/MobileMenuTrigger/MobileMenuTrigger';
+import Nav from 'src/components/Nav/Nav';
+import uiSizes from 'src/constants/uiSizes';
 import './MobileMenu.css';
 
 type Props = {
@@ -18,8 +15,8 @@ type Props = {
   onClick: Function,
 };
 
-const MobileMenu = (props: Props) => {
-  const { onClick, className } = props;
+export default function(props: Props) {
+  const { className, onClick } = props;
   const id = 'mobile-menu-heading';
 
   return (
@@ -36,14 +33,14 @@ const MobileMenu = (props: Props) => {
             <div className="c-mobile-menu__inner">
               <Heading
                 id={id}
-                size={UI_SIZES.smallx}
-                spacing={UI_SIZES.smallx}
+                size={uiSizes.small2x}
+                spacing={uiSizes.small2x}
                 text="Navigate"
               />
               <Nav onClick={onClick} />
               <Heading
-                size={UI_SIZES.smallx}
-                spacing={UI_SIZES.base}
+                size={uiSizes.small2x}
+                spacing={uiSizes.default}
                 text="Contact"
               />
               <ContactCtas />
@@ -53,6 +50,4 @@ const MobileMenu = (props: Props) => {
       </div>
     </CloseOnEscape>
   );
-};
-
-export default MobileMenu;
+}

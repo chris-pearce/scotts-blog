@@ -5,12 +5,12 @@
   border-radius: 100px;
   color: var(--c-contact-ctas-color);
   display: inline-block;
-  padding: var(--spacing-smallx) var(--spacing-largex);
+  padding: var(--spacing-small3x) var(--spacing-large7x);
   transition: all var(--transition-smooth);
 }
 
 .c-contact-ctas__item:not(:last-child) {
-  margin-right: var(--spacing-small);
+  margin-right: var(--spacing-small1x);
 }
 
 .c-contact-ctas--alternate-style .c-contact-ctas__item {
@@ -19,8 +19,8 @@
   color: var(--c-contact-ctas-color-alternate);
   font-variant-caps: all-small-caps;
   font-weight: 200;
-  padding: var(--spacing-small2x) var(--spacing-base)
-    calc(var(--spacing-small2x) + 2px);
+  padding: var(--spacing-small3x) var(--spacing-default)
+    calc(var(--spacing-small3x) + 2px);
 }
 
 .c-contact-ctas__item:focus,

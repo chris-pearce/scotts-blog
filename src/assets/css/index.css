@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 
-@import 'backpack';
+@import 'backpack.css';
 @import 'config';
 @import 'core';
-@import 'utilities';
+@import 'utils';

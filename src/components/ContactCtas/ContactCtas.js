@@ -16,7 +16,7 @@ const Cta = (props: CtaProps) => {
         isEmail ? 'mailto:info@citychiropractor.com.au' : 'tel:+612-9221-0771'
       }
     >
-      {props.isEmail ? 'Email us' : 'Call us'}
+      {isEmail ? 'Email us' : 'Call us'}
     </a>
   );
 };
@@ -25,7 +25,7 @@ type Props = {
   isAlternateStyle?: boolean,
 };
 
-const ContactCtas = (props: Props) => {
+export default function(props: Props) {
   const { isAlternateStyle = false } = props;
   const rootClass = 'c-contact-ctas';
 
@@ -40,6 +40,4 @@ const ContactCtas = (props: Props) => {
       <Cta isEmail />
     </div>
   );
-};
-
-export default ContactCtas;
+}

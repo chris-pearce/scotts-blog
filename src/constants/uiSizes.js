@@ -2,15 +2,15 @@
 import keyMirror from 'keymirror';
 
 export default keyMirror({
-  large: null,
-  large1X: null,
-  large2X: null,
-  large3X: null,
-  large4X: null,
-  large5X: null,
-  large6X: null,
-  root: null,
-  small: null,
-  small1X: null,
-  small2X: null,
+  default: null,
+  large1x: null,
+  large2x: null,
+  large3x: null,
+  large4x: null,
+  large5x: null,
+  large6x: null,
+  large7x: null,
+  small1x: null,
+  small2x: null,
+  small3x: null,
 });

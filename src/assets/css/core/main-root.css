@@ -1,4 +1,6 @@
 html {
+  background: $color-brand;
+  padding: em(40);
   color: var(--color-brand);
   font-size: var(--font-size-default);
 }

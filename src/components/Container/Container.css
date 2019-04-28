@@ -9,5 +9,5 @@
 }
 
 .c-container--is-inline {
-  display: block;
+  display: inline-block;
 }

@@ -1,6 +1,6 @@
-// @flow
-import * as React from 'react';
+import React from 'react';
 import { Transition } from 'react-transition-group';
+import PropTypes from 'prop-types';
 import './UITransition.css';
 
 /**
@@ -15,22 +15,8 @@ import './UITransition.css';
  * ⇢ Exited
  */
 
-type Props = {
-  children: React.Node,
-  exitTimeout?: number,
-  in: boolean,
-  onExited?: Function,
-  type?: string,
-};
-
-const UITransition = (props: Props) => {
-  const {
-    in: inProp,
-    children,
-    exitTimeout = 150,
-    onExited,
-    type = 'scale-and-fade-from-top-right',
-  } = props;
+export default function UITransition(props) {
+  const { in: inProp, children, exitTimeout, onExited, type } = props;
 
   return (
     <Transition
@@ -46,6 +32,18 @@ const UITransition = (props: Props) => {
       }
     </Transition>
   );
+}
+
+UITransition.propTypes = {
+  children: PropTypes.node.isRequired,
+  exitTimeout: PropTypes.number,
+  in: PropTypes.bool.isRequired,
+  onExited: PropTypes.func,
+  type: PropTypes.string,
 };
 
-export default UITransition;
+UITransition.defaultProps = {
+  exitTimeout: 150,
+  onExited: () => {},
+  type: 'scale-and-fade-from-top-right',
+};

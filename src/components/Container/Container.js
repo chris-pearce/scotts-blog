@@ -1,28 +1,32 @@
-// @flow
-import * as React from 'react';
+import React from 'react';
 import classnames from 'classnames';
-import type { UISizes } from 'src/types';
+import PropTypes from 'prop-types';
+import uiSizes from 'src/constants/uiSizes';
 import './Container.css';
 
-type Props = {
-  children: React.Node,
-  size?: UISizes,
-  tag?: 'div' | 'span',
-};
-
-export default function(props: Props) {
-  const { children, size, tag = 'div' } = props;
-  const Tag = tag;
+export default function Container(props) {
+  const { children, size, tag: Tag } = props;
   const rootClass = 'c-container';
 
   return (
     <Tag
       className={classnames(rootClass, {
-        [size ? `${rootClass}--${size}` : '']: size,
-        [`${rootClass}--is-inline`]: tag === 'span',
+        [`${rootClass}--${size}`]: size,
+        [`${rootClass}--is-inline`]: Tag === 'span',
       })}
     >
       {children}
     </Tag>
   );
 }
+
+Container.propTypes = {
+  children: PropTypes.node.isRequired,
+  size: PropTypes.shape(uiSizes),
+  tag: PropTypes.oneOf(['div', 'span']),
+};
+
+Container.defaultProps = {
+  size: uiSizes.default,
+  tag: 'div',
+};

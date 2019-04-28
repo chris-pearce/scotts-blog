@@ -1,43 +1,39 @@
-// @flow
-import classnames from 'classnames';
-import './ContactCtas.css';
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './ContactCtas.module.css';
 
-type CtaProps = {
-  isEmail?: boolean,
+const Item = ({ isEmail }) => (
+  <a
+    className={styles.item}
+    href={
+      isEmail ? 'mailto:info@citychiropractor.com.au' : 'tel:+612-9221-0771'
+    }
+  >
+    {isEmail ? 'Email us' : 'Call us'}
+  </a>
+);
+
+Item.propTypes = {
+  isEmail: PropTypes.bool,
 };
 
-const Cta = (props: CtaProps) => {
-  const { isEmail = false } = props;
-
-  return (
-    <a
-      className="c-contact-ctas__item"
-      href={
-        isEmail ? 'mailto:info@citychiropractor.com.au' : 'tel:+612-9221-0771'
-      }
-    >
-      {isEmail ? 'Email us' : 'Call us'}
-    </a>
-  );
+Item.defaultProps = {
+  isEmail: false,
 };
 
-type Props = {
-  isAlternateStyle?: boolean,
+const ContactCtas = ({ isAlternateStyle }) => (
+  <div className={{ isAlternateStyle }}>
+    <Item />
+    <Item isEmail />
+  </div>
+);
+
+ContactCtas.propTypes = {
+  isAlternateStyle: PropTypes.bool,
 };
 
-export default function(props: Props) {
-  const { isAlternateStyle = false } = props;
-  const rootClass = 'c-contact-ctas';
+ContactCtas.defaultProps = {
+  isAlternateStyle: false,
+};
 
-  return (
-    <div
-      className={classnames(
-        rootClass,
-        isAlternateStyle && `${rootClass}--alternate-style`
-      )}
-    >
-      <Cta />
-      <Cta isEmail />
-    </div>
-  );
-}
+export default ContactCtas;

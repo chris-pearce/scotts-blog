@@ -1,13 +1,8 @@
-// @flow
-import * as React from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import keyCodes from 'src/constants/keyCodes';
 
-type Props = {
-  children: React.Node,
-  onKeydown: Function,
-};
-
-export default class CloseOnEscape extends React.Component<Props> {
+export default class CloseOnEscape extends React.Component {
   componentDidMount() {
     if (typeof window !== 'undefined') {
       window.addEventListener('keydown', this.onKeydown);
@@ -20,7 +15,7 @@ export default class CloseOnEscape extends React.Component<Props> {
     }
   }
 
-  onKeydown = (event: SyntheticKeyboardEvent<>) => {
+  onKeydown = event => {
     const { onKeydown } = this.props;
 
     if (event.key === keyCodes.escape) return onKeydown();
@@ -32,3 +27,8 @@ export default class CloseOnEscape extends React.Component<Props> {
     return React.Children.only(children);
   }
 }
+
+CloseOnEscape.propTypes = {
+  children: PropTypes.element.isRequired,
+  onKeydown: PropTypes.func.isRequired,
+};

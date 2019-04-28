@@ -1,11 +1,10 @@
-const { graphql } = require('gatsby');
+// const { graphql } = require('gatsby');
 const paths = require('../paths');
 
-module.exports = ({ actions }) => {
+module.exports = ({ actions, graphql }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
-    // Query for markdown nodes to use in creating pages
     resolve(
       graphql(
         `
@@ -24,6 +23,7 @@ module.exports = ({ actions }) => {
         if (result.errors) {
           reject(result.errors);
         }
+        console.log(JSON.stringify(result, null, 4));
 
         // We want to create a detailed page for each product node. We'll just
         // use the Contentful id for the slug.

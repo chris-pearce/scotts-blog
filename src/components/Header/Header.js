@@ -1,4 +1,4 @@
-// @flow
+import React from 'react';
 import Media from 'react-media';
 import ContactCtas from 'src/components/ContactCtas/ContactCtas';
 import Container from 'src/components/Container/Container';
@@ -7,14 +7,12 @@ import MobileMenu from 'src/components/MobileMenu/MobileMenu';
 import MobileMenuTrigger from 'src/components/MobileMenuTrigger/MobileMenuTrigger';
 import Nav from 'src/components/Nav/Nav';
 import UITransition from 'src/components/UITransition/UITransition';
-import breakpoints from 'src/constants/tokens/breakpoints';
+import { a11y } from 'src/tokens';
 import './Header.css';
 
-type State = {
-  isMobileMenuOpen: boolean,
-};
+console.log('\n\n All tokens: ', a11y.tapTarget);
 
-export default class Header extends React.Component<{}, State> {
+export default class Header extends React.Component {
   state = {
     isMobileMenuOpen: false,
   };
@@ -47,7 +45,8 @@ export default class Header extends React.Component<{}, State> {
         <Container>
           <div className="c-header__inner">
             <Logo />
-            <Media query={`(max-width: ${breakpoints.breakpointLarge1x})`}>
+            {/* large1x bp */}
+            <Media query="(max-width: 40em)">
               {matches =>
                 matches ? (
                   <>

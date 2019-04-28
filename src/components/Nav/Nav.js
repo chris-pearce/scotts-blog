@@ -1,13 +1,10 @@
-// @flow
+import React from 'react';
 import { Link } from 'gatsby';
+import classnames from 'classnames';
+import PropTypes from 'prop-types';
 import pageNames from 'src/constants/pageNames';
 import toLowercaseHyphenDelimited from 'src/utils/toLowercaseHyphenDelimited';
 import './Nav.css';
-
-type Props = {
-  isMobile?: boolean,
-  onClick?: Function,
-};
 
 const data = [
   {
@@ -36,15 +33,16 @@ const data = [
   },
 ];
 
-export default function(props: Props) {
-  const { isMobile = true, onClick } = props;
+export default function Nav(props) {
+  const { isMobile, onClick } = props;
   const rootClass = 'c-nav';
 
   return (
     <nav
-      className={`${rootClass} ${rootClass}--${
-        isMobile ? 'mobile' : 'non-mobile'
-      }`}
+      className={classnames(rootClass, {
+        [`${rootClass}--mobile`]: isMobile,
+        [`${rootClass}--non-mobile`]: !isMobile,
+      })}
     >
       <ul>
         {data.map(item => (
@@ -61,3 +59,13 @@ export default function(props: Props) {
     </nav>
   );
 }
+
+Nav.propTypes = {
+  isMobile: PropTypes.bool,
+  onClick: PropTypes.func,
+};
+
+Nav.defaultProps = {
+  isMobile: true,
+  onClick: () => {},
+};

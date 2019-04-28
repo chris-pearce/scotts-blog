@@ -1,16 +1,13 @@
-// @flow
-import keyMirror from 'keymirror';
-
-export default keyMirror({
-  default: null,
-  large1x: null,
-  large2x: null,
-  large3x: null,
-  large4x: null,
-  large5x: null,
-  large6x: null,
-  large7x: null,
-  small1x: null,
-  small2x: null,
-  small3x: null,
-});
+export default {
+  default: 'default',
+  large1x: 'large1x',
+  large2x: 'large2x',
+  large3x: 'large3x',
+  large4x: 'large4x',
+  large5x: 'large5x',
+  large6x: 'large6x',
+  large7x: 'large7x',
+  small1x: 'small1x',
+  small2x: 'small2x',
+  small3x: 'small3x',
+};

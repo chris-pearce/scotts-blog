@@ -1,14 +1,10 @@
-// @flow
-import * as React from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Container from 'src/components/Container/Container';
 import fragmentIdentifiers from 'src/constants/fragmentIdentifiers';
 import './Main.css';
 
-type Props = {
-  children: React.Node,
-};
-
-export default function(props: Props) {
+export default function Main(props) {
   const { children } = props;
 
   return (
@@ -17,3 +13,7 @@ export default function(props: Props) {
     </main>
   );
 }
+
+Main.propTypes = {
+  children: PropTypes.node.isRequired,
+};

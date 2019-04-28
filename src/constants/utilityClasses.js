@@ -1,6 +1,5 @@
-// @flow
-export default Object.freeze({
+export default {
   hideVisually: 'u-hide-visually',
   spacingDown: 'u-spacing-down-',
   spacingUp: 'u-spacing-up-',
-});
+};

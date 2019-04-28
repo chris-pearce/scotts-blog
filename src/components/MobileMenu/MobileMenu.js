@@ -1,6 +1,7 @@
-// @flow
+import React from 'react';
 import classnames from 'classnames';
 import FocusTrap from 'focus-trap-react';
+import PropTypes from 'prop-types';
 import CloseOnEscape from 'src/components/CloseOnEscape/CloseOnEscape';
 import ContactCtas from 'src/components/ContactCtas/ContactCtas';
 import Container from 'src/components/Container/Container';
@@ -10,12 +11,7 @@ import Nav from 'src/components/Nav/Nav';
 import uiSizes from 'src/constants/uiSizes';
 import './MobileMenu.css';
 
-type Props = {
-  className?: string,
-  onClick: Function,
-};
-
-export default function(props: Props) {
+export default function MobileMenu(props) {
   const { className, onClick } = props;
   const id = 'mobile-menu-heading';
 
@@ -51,3 +47,12 @@ export default function(props: Props) {
     </CloseOnEscape>
   );
 }
+
+MobileMenu.propTypes = {
+  className: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+};
+
+MobileMenu.defaultProps = {
+  className: '',
+};

@@ -1,18 +1,21 @@
+require('dotenv').config();
+
+const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } = process.env;
+
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://citychiropractor.com.au',
     title: 'City Chiropractic Care',
   },
   plugins: [
-    'gatsby-plugin-flow',
+    'gatsby-plugin-root-import',
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        spaceId: 's6hj5d8j3nqc',
-        accessToken:
-          '1e8fa0664f24f1f57446aa2168c5cca3cd1bc382cec3e980dd41f9c2d085c60a',
+        spaceId: CONTENTFUL_SPACE_ID,
+        accessToken: CONTENTFUL_ACCESS_TOKEN,
       },
     },
     'gatsby-transformer-remark',

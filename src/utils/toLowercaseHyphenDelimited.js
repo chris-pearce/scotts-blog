@@ -1,4 +1,3 @@
-// @flow
-export default function toLowercaseHyphenDelimited(str: string) {
+export default function toLowercaseHyphenDelimited(str) {
   return str.replace(/\s+/g, '-').toLowerCase();
 }

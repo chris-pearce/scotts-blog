@@ -1,16 +1,23 @@
-const { pxToEm, pxToRem } = require('./src/utils/pxToRelativeUnit');
-const tokens = require('./src/constants/tokens');
+const postCssImport = require('postcss-import');
+const postCssPresetEnv = require('postcss-preset-env');
+const postCssFunctions = require('postcss-functions');
+const postCssSimpleVars = require('postcss-simple-vars');
+const paths = require('./paths');
+// eslint-disable-next-line import/no-dynamic-require
+const { tokens, utils } = require(`${paths.scripts}/cssifyTokens`);
 
-module.exports = {
-  plugins: {
-    'postcss-import': {},
-    'postcss-functions': {
+module.exports = () => ({
+  plugins: [
+    postCssImport({ path: ['.'] }),
+    postCssFunctions({
       functions: {
-        em: pxToEm,
-        rem: pxToRem,
+        em: utils.pxToEm,
+        rem: utils.pxToRem,
       },
-    },
-    'postcss-simple-vars': { variables: tokens },
-    'postcss-preset-env': { stage: 0 },
-  },
-};
+    }),
+    postCssSimpleVars({
+      variables: tokens,
+    }),
+    postCssPresetEnv({ stage: 0 }),
+  ],
+});

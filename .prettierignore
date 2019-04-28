@@ -1,4 +1,4 @@
 .vscode
-flow-typed/npm
 public
+build
 package.json

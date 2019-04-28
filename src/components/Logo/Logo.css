@@ -1,15 +1,13 @@
-@import 'src/assets/css/config';
-
 .c-logo:focus {
-  outline-color: var(--color-focus-alternate);
+  outline-color: $color-focus-alternate;
 }
 
 .c-logo img {
-  transition: filter var(--transition-smooth);
+  transition: filter $transition-smooth;
   width: 226px;
-}
 
-.c-logo:focus img,
-.c-logo:hover img {
-  filter: opacity(80%);
+  /* &:focus img,
+  &:hover img {
+    filter: opacity(80%);
+  } */
 }

@@ -1,20 +1,20 @@
-@import 'src/assets/css/config';
+$_spacing-ends: $spacing-large2x;
 
 .c-footer {
-  border-top: 1px solid var(--color-grey);
-  padding-bottom: var(--c-footer-spacing-ends);
-  padding-top: var(--c-footer-spacing-ends);
+  border-top: 1px solid $color-grey;
+  padding-bottom: $_spacing-ends;
+  padding-top: $_spacing-ends;
   position: relative;
-  transition: filter var(--transition-smooth);
+  transition: filter $transition-smooth;
   will-change: filter;
-  z-index: var(--z-index-footer);
+  z-index: $zIndex-layout-master-footer;
 }
 
 /**
  * Make non-interactive and apply some filters whilst the mobile menu is open.
  */
 
-@media (--up-to-header-bp) {
+@media $breakpoint-header-upTo {
   .is-mobile-menu-open .c-footer {
     filter: grayscale(100%) blur(2px);
     pointer-events: none;
@@ -23,6 +23,6 @@
 
 .c-footer__copyright {
   display: block;
-  font-size: var(--font-size-small);
+  font-size: $typography-size-small;
   text-align: center;
 }

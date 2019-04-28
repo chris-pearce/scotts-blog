@@ -1,17 +1,15 @@
-@import 'src/assets/css/config';
-
 .c-main {
   position: relative;
-  transition: filter var(--transition-smooth);
+  transition: filter $transition-smooth;
   will-change: filter;
-  z-index: var(--z-index-main);
+  z-index: $zIndex-layout-master-main;
 }
 
 /**
  * Make non-interactive and apply some filters whilst the mobile menu is open.
  */
 
-@media (--up-to-header-bp) {
+@media $breakpoint-header-upTo {
   .is-mobile-menu-open .c-main {
     filter: grayscale(100%) blur(2px);
     pointer-events: none;

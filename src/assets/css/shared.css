@@ -1,0 +1,6 @@
+/**
+ * Media queries.
+ */
+
+/* @custom-media --up-to-header-bp (width <= 48.75em); */
+$breakpoint-header-upTo: '(width <= 48.75em)';

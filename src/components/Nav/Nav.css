@@ -1,24 +1,22 @@
-@import 'src/assets/css/config';
-
 /**
  * Mobile.
  */
 
 .c-nav--mobile {
-  margin-bottom: var(--spacing-large1x);
+  margin-bottom: $spacing-large1x;
 }
 
 .c-nav--mobile a {
   display: block;
-  font-size: var(--font-size-large);
+  font-size: $typography-size-large;
   padding-bottom: var(--c-nav-mobile-link-padding-ends);
   padding-top: var(--c-nav-mobile-link-padding-ends);
-  transition: color var(--transition-smooth);
+  transition: color $transition-smooth;
 }
 
 .c-nav--mobile a:focus,
 .c-nav--mobile a:hover {
-  color: var(--color-brand);
+  color: $color-brand;
 }
 
 /**
@@ -30,34 +28,34 @@
 }
 
 .c-nav--non-mobile li:not(:last-child) {
-  margin-right: var(--spacing-default);
+  margin-right: $spacing-default;
 }
 
-@media (--from-large2x) {
+@media $breakpoint-large2x-from {
   .c-nav--non-mobile li:not(:last-child) {
-    margin-right: var(--spacing-small1x);
+    margin-right: $spacing-small1x;
   }
 }
 
 .c-nav--non-mobile a {
-  color: var(--color-white);
+  color: $color-white;
 }
 
 .c-nav--non-mobile a:focus {
-  outline-color: var(--color-focus-alternate);
+  outline-color: $color-focus-alternate;
 }
 
-@media (--from-large2x) {
+@media $breakpoint-large2x-from {
   .c-nav--non-mobile a {
     border-radius: 100px;
     display: block;
-    padding: var(--spacing-small3x) var(--spacing-default);
+    padding: $spacing-small3x $spacing-default;
     transition: background-color 0.1s linear;
   }
 
   .c-nav--non-mobile a:focus,
   .c-nav--non-mobile a:hover {
-    background-color: var(--color-link);
+    background-color: $color-link;
     text-decoration: none;
   }
 }

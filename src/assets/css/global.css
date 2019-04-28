@@ -1,0 +1,47 @@
+html {
+  background-color: $color-brand;
+  color: $color-white;
+  font-size: $typography-size-default;
+}
+
+/**
+ * 1. Needed so that `<MasterLayout>`s minimum height is the height of the
+ *    viewport.
+ */
+
+body {
+  min-height: 100vh; /* 1 */
+}
+
+/* Custom focus ring */
+
+:focus {
+  outline: dashed 3px $color-brand;
+  outline-offset: 3px;
+}
+
+/**
+ * Suppress the focus ring on `:focus` for mouse users using the What Input lib.
+ * https://github.com/ten1seven/what-input
+ */
+
+[data-whatintent='mouse'] :focus {
+  outline: none !important;
+}
+
+a {
+  color: $color-link;
+  text-decoration: none;
+  text-decoration-skip: edges;
+}
+
+a:focus,
+a:hover {
+  text-decoration: underline;
+}
+
+/**
+ * Components.
+ */
+
+@custom-media --up-to-header-bp (width <= 48.75em);

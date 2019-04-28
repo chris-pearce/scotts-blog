@@ -1,5 +1,4 @@
 @charset 'UTF-8';
 
-@import 'config';
-@import 'core';
-@import 'utils';
+@import 'shared.css';
+@import 'global.css';

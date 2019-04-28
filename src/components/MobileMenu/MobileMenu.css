@@ -1,8 +1,6 @@
-@import 'src/assets/css/config';
-
 .c-mobile-menu {
-  background-color: var(--color-white);
-  border: 3px solid var(--color-brand);
+  background-color: $color-white;
+  border: 3px solid $color-brand;
   border-radius: 4px;
   box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
     0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -20,7 +18,7 @@
  * Disable vertical scrolling on the document when the menu is open.
  */
 
-@media (--up-to-header-bp) {
+@media $breakpoint-header-upTo {
   .is-mobile-menu-open {
     overflow-y: hidden;
   }

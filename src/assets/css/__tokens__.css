@@ -1,0 +1,13 @@
+:root {
+  /* Mobile menu */
+  --c-mobile-menu-top-offset: var(--c-header-spacing-ends);
+
+  /* Mobile menu trigger */
+  --c-mobile-menu-trigger-size: var($a11y-tapTarget);
+  --c-mobile-menu-trigger-padding: var($spacing-small1x);
+  --c-mobile-menu-trigger-open-bar-position-offset: 6px;
+  --c-mobile-menu-trigger-close-rotate: 45deg;
+
+  /* Nav */
+  --c-nav-mobile-link-padding-ends: var($spacing-small3x);
+}

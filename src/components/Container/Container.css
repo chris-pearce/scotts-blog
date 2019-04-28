@@ -1,10 +1,10 @@
-@import 'src/assets/css/config';
+$_gutter: $spacing-large1x;
 
 .c-container {
   margin: 0 auto;
-  max-width: var(--c-container-max-width);
-  padding-left: var(--c-container-gutter);
-  padding-right: var(--c-container-gutter);
+  max-width: calc(1260 / $typography-size-default * 1rem);
+  padding-left: $_gutter;
+  padding-right: $_gutter;
   width: 100%;
 }
 

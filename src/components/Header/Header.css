@@ -1,22 +1,24 @@
-@import 'src/assets/css/config';
+$_spacing-ends: $spacing-default;
+$_spacing-ends-large: $spacing-large1x;
+$_color: $color-brand;
 
 .c-header {
-  background-color: var(--c-header-color);
+  background-color: $_color;
   background-image: linear-gradient(
     45deg,
-    color(var(--c-header-color) shade(6%)),
-    color(var(--c-header-color) tint(16%))
+    color($_color shade(6%)),
+    color($_color tint(16%))
   );
-  padding-bottom: var(--c-header-spacing-ends);
-  padding-top: var(--c-header-spacing-ends);
+  padding-bottom: $_spacing-ends;
+  padding-top: $_spacing-ends;
   position: relative;
-  z-index: var(--z-index-header);
+  z-index: $zIndex-layout-master-header;
 }
 
-@media (--from-large2x) {
+@media $breakpoint-large2x-from {
   .c-header {
-    padding-bottom: var(--c-header-spacing-ends-large);
-    padding-top: var(--c-header-spacing-ends-large);
+    padding-bottom: $_spacing-ends-large;
+    padding-top: $_spacing-ends-large;
   }
 }
 

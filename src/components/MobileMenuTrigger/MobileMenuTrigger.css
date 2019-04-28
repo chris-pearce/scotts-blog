@@ -1,5 +1,3 @@
-@import 'src/assets/css/config';
-
 .c-mobile-menu-trigger {
   background-clip: content-box;
   height: var(--c-mobile-menu-trigger-size);
@@ -13,7 +11,7 @@
   border-radius: 2px;
   display: block;
   height: 2px;
-  transition: opacity var(--transition-smooth);
+  transition: opacity $transition-smooth;
 }
 
 .c-mobile-menu-trigger span::before,
@@ -38,13 +36,13 @@
 }
 
 .c-mobile-menu-trigger--open:focus {
-  outline-color: var(--color-focus-alternate);
+  outline-color: $color-focus-alternate;
 }
 
 .c-mobile-menu-trigger--open span,
 .c-mobile-menu-trigger--open span::before,
 .c-mobile-menu-trigger--open span::after {
-  background-color: var(--color-white);
+  background-color: $color-white;
 }
 
 .c-mobile-menu-trigger--open span,
@@ -83,7 +81,7 @@
 
 .c-mobile-menu-trigger--close span::before,
 .c-mobile-menu-trigger--close span::after {
-  background-color: var(--color-brand);
+  background-color: $color-brand;
 }
 
 .c-mobile-menu-trigger--close span::before {

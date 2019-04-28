@@ -1,43 +1,44 @@
-@import 'src/assets/css/config';
+$_color: $color-link;
+$_color-hover: $color-link;
+$_color-alternate: $color-white;
+$_color-bg-alternate: $color-brand;
+$_spacing-small3x: $spacing-small3x;
 
 .item {
-  border: 2px solid var(--c-contact-ctas-color);
+  border: 2px solid $_color;
   border-radius: 100px;
-  color: var(--c-contact-ctas-color);
+  color: $_color;
   display: inline-block;
-  padding: var(--spacing-small3x) var(--spacing-large7x);
-  transition: all var(--transition-smooth);
+  padding: $_spacing-small3x $spacing-large7x;
+  transition: all $transition-smooth;
 
   &:not(:last-child) {
-    margin-right: var(--spacing-small1x);
+    margin-right: $spacing-small1x;
   }
 
   &:focus,
   &:hover {
-    border-color: var(--c-contact-ctas-color-hover);
-    color: var(--c-contact-ctas-color-hover);
+    border-color: $_color-hover;
+    color: $_color-hover;
     text-decoration: none;
   }
 }
 
 .isAlternateStyle .item {
-  background-color: var(--c-contact-ctas-background-alternate);
+  background-color: $_color-bg-alternate;
   border: 0;
-  color: var(--c-contact-ctas-color-alternate);
+  color: $_color-alternate;
   font-variant-caps: all-small-caps;
   font-weight: 200;
-  padding: var(--spacing-small3x) var(--spacing-default)
-    calc(var(--spacing-small3x) + 2px);
+  padding: $_spacing-small3x $spacing-default calc($_spacing-small3x + 2px);
 
   &:focus,
   &:hover {
-    background-color: color(
-      var(--c-contact-ctas-background-alternate) shade(12%)
-    );
-    color: var(--c-contact-ctas-color-alternate);
+    background-color: color($_color-bg-alternate shade(12%));
+    color: $_color-alternate;
   }
 }
 
 .c-header .isAlternateStyle .item:focus {
-  outline-color: var(--color-focus-alternate);
+  outline-color: $color-focus-alternate;
 }
